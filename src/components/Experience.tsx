@@ -4,36 +4,18 @@ import { Card } from "@/components/ui/card";
 const Experience = () => {
   const experiences = [
     {
-      company: "Company Name",
-      position: "Senior Position",
-      period: "2022 - Present",
-      description: "Leading strategic initiatives and driving innovation in technology solutions. Successfully delivered multiple high-impact projects that improved operational efficiency by 30%.",
+      title: "Business Development Associate",
+      company: "Applywizz",
+      period: "August 2024 - Present",
+      description:
+        "Driving lead generation and sales pipeline optimization through strategic use of CRM platforms and sales automation tools. Managing client acquisition and account management in the EdTech and SaaS sectors.",
       achievements: [
-        "Increased team productivity by 40%",
-        "Reduced project delivery time by 25%",
-        "Implemented best practices across teams",
-      ],
-    },
-    {
-      company: "Previous Company",
-      position: "Mid-Level Position",
-      period: "2020 - 2022",
-      description: "Developed and maintained critical business applications. Collaborated with cross-functional teams to deliver high-quality solutions.",
-      achievements: [
-        "Delivered 15+ successful projects",
-        "Improved code quality by 35%",
-        "Mentored junior team members",
-      ],
-    },
-    {
-      company: "First Company",
-      position: "Junior Position",
-      period: "2018 - 2020",
-      description: "Started career building foundational skills in software development. Contributed to various projects and learned industry best practices.",
-      achievements: [
-        "Completed comprehensive training program",
-        "Contributed to 10+ projects",
-        "Received excellence award",
+        "Created dynamic lead generation strategy identifying 200+ qualified leads per quarter, improving pipeline by 35%",
+        "Optimized outreach efforts through HubSpot CRM and Lemlist, achieving 35% improvement in reply rates and 40% faster response times",
+        "Integrated HubSpot automation with Google Sheets, enhancing operational efficiency by 20%",
+        "Collaborated with marketing and analytics teams, resulting in 22% increase in lead-to-demo conversion rates",
+        "Developed custom business proposals securing contracts exceeding ₹15L in the EdTech sector",
+        "Automated client onboarding process, reducing timelines by 25%",
       ],
     },
   ];
@@ -60,7 +42,7 @@ const Experience = () => {
               <div className="ml-4">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold mb-1">{exp.position}</h3>
+                    <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
                     <div className="flex items-center text-primary gap-2">
                       <Briefcase className="h-4 w-4" />
                       <span className="font-semibold">{exp.company}</span>

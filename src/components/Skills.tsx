@@ -4,48 +4,47 @@ import { Badge } from "@/components/ui/badge";
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Programming Languages",
+      category: "CRM & Outreach Platforms",
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "Java", level: 75 },
+        { name: "HubSpot CRM", level: 90 },
+        { name: "Salesforce", level: 85 },
+        { name: "Apollo.io", level: 85 },
+        { name: "LinkedIn Sales Navigator", level: 90 },
       ],
     },
     {
-      category: "Frontend Technologies",
+      category: "Sales & Account Management",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "HTML/CSS", level: 95 },
+        { name: "B2C Lead Generation", level: 90 },
+        { name: "Sales Pipeline Optimization", level: 85 },
+        { name: "Client Acquisition", level: 90 },
+        { name: "Account Retention", level: 85 },
       ],
     },
     {
-      category: "Backend & Database",
+      category: "Market Research & Analytics",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
-        { name: "REST APIs", level: 90 },
+        { name: "SimilarWeb", level: 80 },
+        { name: "SEMrush", level: 80 },
+        { name: "Power BI", level: 85 },
+        { name: "Google Analytics 4", level: 85 },
       ],
     },
     {
-      category: "Tools & Platforms",
+      category: "Communication & Automation",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "CI/CD", level: 80 },
+        { name: "Email Marketing (Lemlist, Mailchimp)", level: 90 },
+        { name: "Proposal Writing", level: 90 },
+        { name: "ROI Modeling", level: 85 },
+        { name: "Sales Automation (Zapier)", level: 80 },
       ],
     },
   ];
 
   const certifications = [
-    "AWS Certified Developer",
-    "Professional Scrum Master",
-    "Google Cloud Professional",
-    "Microsoft Azure Fundamentals",
+    "Business Development Foundations – LinkedIn Learning",
+    "Sales Operations & Management – LinkedIn Learning",
+    "Google Analytics for Beginners – Google Analytics Academy",
   ];
 
   return (

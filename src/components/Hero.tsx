@@ -1,5 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
@@ -9,14 +10,15 @@ const Hero = () => {
           <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700">
             <p className="text-muted-foreground text-lg">Hello, I'm</p>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="gradient-text">Your Name</span>
+              <span className="gradient-text">Mardhavan Abbathini</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-              Your Professional Title
+              Business Development Associate
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              A passionate professional with expertise in delivering exceptional results. 
-              Specialized in creating innovative solutions that drive business growth and success.
+              A results-driven Business Development Associate with hands-on experience in B2C sales, 
+              client acquisition, and account management. Specialized in leveraging CRM platforms and 
+              sales automation tools to drive lead generation and increase customer retention.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
@@ -42,8 +44,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20 animate-pulse"></div>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary shadow-large">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Profile" 
+                  src={profilePhoto} 
+                  alt="Mardhavan Abbathini - Business Development Associate" 
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -4,27 +4,15 @@ import { Card } from "@/components/ui/card";
 const Education = () => {
   const education = [
     {
-      degree: "Master of Science",
-      field: "Computer Science",
-      institution: "University Name",
-      period: "2016 - 2018",
-      description: "Specialized in Machine Learning and Data Science. Graduated with honors.",
-      achievements: [
-        "GPA: 3.8/4.0",
-        "Research published in international journals",
-        "Teaching Assistant for Advanced Algorithms",
-      ],
-    },
-    {
       degree: "Bachelor of Technology",
-      field: "Information Technology",
-      institution: "College Name",
-      period: "2012 - 2016",
-      description: "Foundation in software engineering principles and computer science fundamentals.",
+      field: "Electronics and Communication Engineering",
+      institution: "Jawaharlal Nehru Technological University, Hyderabad",
+      period: "2020 - 2024",
+      description: "Strong foundation in engineering principles with focus on communication systems and electronics.",
       achievements: [
-        "First Class with Distinction",
-        "President of Computer Science Club",
-        "Winner of multiple hackathons",
+        "Developed expertise in technical problem-solving and analytical thinking",
+        "Applied engineering concepts to business development strategies",
+        "Balanced academic excellence with practical business skills development",
       ],
     },
   ];

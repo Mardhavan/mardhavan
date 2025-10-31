@@ -15,25 +15,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com",
+      value: "mardhavan5320@gmail.com",
+      link: "mailto:mardhavan5320@gmail.com",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
-      link: "https://linkedin.com/in/yourprofile",
-    },
-    {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/yourusername",
-      link: "https://github.com/yourusername",
+      value: "Mardhavan Abbathini",
+      link: "https://www.linkedin.com/in/mardhavan-abbathini-b34b59259",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Your City, Country",
+      value: "Hyderabad, India",
       link: null,
     },
   ];

@@ -5,31 +5,31 @@ const About = () => {
   const highlights = [
     {
       icon: Code,
-      title: "Technical Expert",
-      description: "Deep expertise in modern technologies and best practices",
+      title: "CRM & Sales Tech",
+      description: "Expert in HubSpot, Salesforce, Apollo.io, and LinkedIn Sales Navigator",
     },
     {
       icon: Target,
       title: "Results-Driven",
-      description: "Focused on delivering measurable business impact",
+      description: "35% improvement in pipeline efficiency and 22% increase in conversions",
     },
     {
       icon: Lightbulb,
-      title: "Innovative Thinker",
-      description: "Creative problem-solver with fresh perspectives",
+      title: "Strategic Thinker",
+      description: "Data-driven approach to sales optimization and lead generation",
     },
     {
       icon: TrendingUp,
-      title: "Continuous Learner",
-      description: "Always evolving with the latest industry trends",
+      title: "Revenue Growth",
+      description: "Secured contracts exceeding ₹15L through strategic partnerships",
     },
   ];
 
   const stats = [
-    { value: "3+", label: "Years Experience" },
-    { value: "50+", label: "Projects Completed" },
-    { value: "95%", label: "Client Satisfaction" },
-    { value: "15+", label: "Technologies" },
+    { value: "200+", label: "Qualified Leads/Quarter" },
+    { value: "35%", label: "Pipeline Growth" },
+    { value: "₹15L+", label: "Contracts Secured" },
+    { value: "25%", label: "Faster Onboarding" },
   ];
 
   return (
@@ -47,13 +47,15 @@ const About = () => {
         <div className="mb-16">
           <Card className="p-8 bg-gradient-card border-primary/20 shadow-medium">
             <p className="text-lg leading-relaxed text-foreground/90">
-              With over 3 years of experience in the industry, I specialize in creating innovative solutions 
-              that drive business success. My expertise spans across multiple domains, and I'm passionate 
-              about leveraging technology to solve complex challenges and deliver measurable results.
+              As a Business Development Associate at Applywizz, I specialize in B2C sales, client acquisition, 
+              and account management. My expertise lies in leveraging CRM platforms (HubSpot, Salesforce), 
+              sales automation tools (Lemlist, Apollo.io), and analytics software (Power BI, GA4) to 
+              efficiently manage sales pipelines and drive lead generation.
               <br /><br />
-              I believe in continuous learning and staying ahead of industry trends. My approach combines 
-              technical excellence with strategic thinking to create solutions that not only work but also 
-              provide real value to users and stakeholders.
+              I've successfully optimized outreach efforts, achieving a 35% improvement in reply rates and 
+              a 20% increase in operational efficiency. My approach combines data-driven decision-making 
+              with strategic relationship building to deliver measurable outcomes and drive revenue growth 
+              in the SaaS and EdTech sectors.
             </p>
           </Card>
         </div>
