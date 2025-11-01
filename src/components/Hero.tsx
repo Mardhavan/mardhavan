@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
           
           {/* Photo on desktop - shown here */}
-          <div className="hidden md:flex justify-center animate-in fade-in slide-in-from-right duration-700 delay-200">
+          <div className="hidden md:flex justify-start md:justify-center lg:justify-start md:pl-8 lg:pl-12 animate-in fade-in slide-in-from-right duration-700 delay-200">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation">
