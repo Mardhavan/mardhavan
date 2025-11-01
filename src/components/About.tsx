@@ -35,13 +35,10 @@ const About = () => {
   return (
     <section id="about" className="py-16 md:py-20 px-4 md:px-0 bg-muted/30 cursor-glow-section">
       <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
             About Me
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate about turning data into decisions and insights into impact
-          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
