@@ -4,11 +4,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent successfully! I'll get back to you soon.");
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      e.currentTarget.reset();
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again or email me directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -90,6 +118,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   required
                   className="bg-background/50"
@@ -98,6 +127,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
                   required
                   className="bg-background/50"
@@ -106,6 +136,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="text"
+                  name="subject"
                   placeholder="Subject"
                   required
                   className="bg-background/50"
@@ -113,6 +144,7 @@ const Contact = () => {
               </div>
               <div>
                 <Textarea
+                  name="message"
                   placeholder="Your Message"
                   required
                   rows={5}
@@ -122,9 +154,10 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-hero hover:opacity-90 transition-all shadow-medium"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-hero hover:opacity-90 transition-all shadow-medium disabled:opacity-50"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
