@@ -18,8 +18,8 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 md:px-8 lg:px-12 cursor-glow-section">
-      <div className="container mx-auto max-w-7xl">
+    <section id="education" className="py-20 px-4 md:px-0 cursor-glow-section">
+      <div className="w-full max-w-full md:px-8 lg:px-12">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text">
             Education
