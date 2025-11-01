@@ -50,15 +50,26 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0">
-                    <info.icon className="h-5 w-5 text-white" />
-                  </div>
+                  {info.link ? (
+                    <a
+                      href={info.link}
+                      target={info.icon === Mail ? "_self" : "_blank"}
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform cursor-pointer"
+                    >
+                      <info.icon className="h-5 w-5 text-white" />
+                    </a>
+                  ) : (
+                    <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0">
+                      <info.icon className="h-5 w-5 text-white" />
+                    </div>
+                  )}
                   <div>
                     <p className="text-sm text-muted-foreground">{info.label}</p>
                     {info.link ? (
                       <a
                         href={info.link}
-                        target="_blank"
+                        target={info.icon === Mail ? "_self" : "_blank"}
                         rel="noopener noreferrer"
                         className="text-foreground hover:text-primary transition-colors"
                       >
