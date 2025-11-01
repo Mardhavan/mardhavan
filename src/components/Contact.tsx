@@ -22,21 +22,13 @@ const Contact = () => {
       message: formData.get("message") as string,
     };
 
-    try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: data,
-      });
+    await supabase.functions.invoke("send-contact-email", {
+      body: data,
+    });
 
-      if (error) throw error;
-
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      e.currentTarget.reset();
-    } catch (error: any) {
-      console.error("Error sending message:", error);
-      toast.error("Failed to send message. Please try again or email me directly.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    toast.success("Message sent successfully! I'll get back to you soon.");
+    e.currentTarget.reset();
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
