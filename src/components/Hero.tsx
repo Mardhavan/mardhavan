@@ -13,7 +13,7 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="gradient-text">MARDHAVAN ABBATHINI</span>
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground font-bold typing-animation inline-block">
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-primary font-bold typing-animation inline-block">
               Business Development Associate
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
