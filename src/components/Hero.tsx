@@ -30,7 +30,8 @@ const Hero = () => {
               </Button>
               <a 
                 href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
-                download="Mardhavan_Abbathini_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border border-primary text-primary hover:bg-primary/10 transition-colors font-medium text-sm"
               >
                 <Download className="h-4 w-4" />
