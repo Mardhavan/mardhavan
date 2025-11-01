@@ -7,11 +7,25 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Determine active section
+      const sections = ["home", "about", "experience", "skills", "education", "contact"];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -39,7 +53,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="text-2xl font-bold gradient-text">
+          <a href="#home" className="text-2xl font-bold gradient-text hover:scale-110 transition-transform">
             MA
           </a>
 
@@ -49,15 +63,21 @@ const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-primary transition-colors"
+                className={`text-foreground/80 hover:text-primary transition-all relative group ${
+                  activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""
+                }`}
               >
                 {item.label}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-hero transition-all ${
+                  activeSection === item.href.slice(1) ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
               </button>
             ))}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="hover:scale-110 transition-transform"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -85,13 +105,15 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-background border-t">
+        <div className="md:hidden bg-background/98 backdrop-blur-lg border-t">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-2 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                className={`block w-full text-left px-4 py-2 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-colors ${
+                  activeSection === item.href.slice(1) ? "text-primary bg-muted font-semibold" : ""
+                }`}
               >
                 {item.label}
               </button>

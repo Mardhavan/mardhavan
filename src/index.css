@@ -104,6 +104,18 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+  
+  /* Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+    z-index: 100;
+    transform-origin: left;
   }
   
   /* Modern mesh gradient background */

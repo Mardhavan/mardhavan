@@ -35,19 +35,20 @@ const Hero = () => {
               client acquisition, and data-driven CRM solutions.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 pt-4 md:pt-6">
-              <Button 
+            <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow transition-all duration-300 border-0 text-sm md:text-base"
+                className="group bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow hover:scale-105 transition-all duration-300 border-0 text-sm md:text-base"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+                Get In Touch 
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <a 
                 href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
                 download="Mardhavan_Abbathini_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 h-10 md:h-11 rounded-md px-6 md:px-8 bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow transition-all duration-300 font-medium text-sm border-0"
+                className="group inline-flex items-center justify-center gap-2 h-10 md:h-11 rounded-md px-6 md:px-8 bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow hover:scale-105 transition-all duration-300 font-medium text-sm border-0"
               >
-                <Download className="h-4 w-4" />
+                <Download className="h-4 w-4 group-hover:animate-bounce" />
                 Download Resume
               </a>
             </div>

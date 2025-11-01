@@ -43,8 +43,11 @@ const About = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-4 rounded-lg bg-card/50 border border-primary/10">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+            <div 
+              key={index} 
+              className="group text-center p-4 rounded-lg bg-card/50 border border-primary/10 hover:border-primary/30 hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform">
                 {stat.value}
               </div>
               <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
@@ -68,10 +71,10 @@ const About = () => {
           {highlights.map((highlight, index) => (
             <Card 
               key={index} 
-              className="p-5 text-center hover:shadow-glow transition-all hover:-translate-y-1 bg-card/30 border-primary/10 hover-glow-card"
+              className="group p-5 text-center hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/30 border-primary/10 hover:border-primary/30 hover-glow-card"
             >
               <div className="mb-3 flex justify-center">
-                <div className="w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center group-hover:scale-110 transition-transform">
                   <highlight.icon className="h-5 w-5 text-white" />
                 </div>
               </div>
