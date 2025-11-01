@@ -28,17 +28,14 @@ const Hero = () => {
               >
                 Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10"
-                asChild
+              <a 
+                href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
+                download="Mardhavan_Abbathini_Resume.pdf"
+                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border border-primary text-primary hover:bg-primary/10 transition-colors font-medium text-sm"
               >
-                <a href="/MARDHAVAN_ABBATHINI_BDA.pdf" download="Mardhavan_Abbathini_Resume.pdf">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Resume
-                </a>
-              </Button>
+                <Download className="h-4 w-4" />
+                Download Resume
+              </a>
             </div>
           </div>
           
