@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
             <p className="text-muted-foreground text-sm md:text-base lg:text-lg">Hi, I'm</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="gradient-text">MARDHAVAN ABBATHINI</span>
+              <span className="gradient-text font-extrabold">MARDHAVAN ABBATHINI</span>
             </h1>
             
             {/* Photo on mobile - shown here */}
