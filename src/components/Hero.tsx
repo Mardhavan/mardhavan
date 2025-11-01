@@ -4,17 +4,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-20 bg-background relative overflow-hidden">
-      {/* Geometric background pattern */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
-                           radial-gradient(circle at 75% 75%, hsl(var(--accent)) 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/5 dark:bg-accent/10 rounded-full blur-3xl"></div>
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-20 relative overflow-hidden">
       <div className="container mx-auto max-w-[1400px] relative z-10 w-full">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
