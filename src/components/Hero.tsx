@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="w-full max-w-full md:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
-            <p className="text-muted-foreground text-sm md:text-base lg:text-lg">Hi, I'm</p>
+            <p className="text-sm md:text-base lg:text-lg" style={{ color: 'hsl(25, 95%, 53%)' }}>Hi, I'm</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
               <span className="gradient-text font-extrabold">MARDHAVAN ABBATHINI</span>
             </h1>
