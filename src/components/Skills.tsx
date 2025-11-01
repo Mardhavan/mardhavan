@@ -72,8 +72,8 @@ const Skills = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="skills" className="py-16 md:py-20 px-4 md:px-6 lg:px-8 cursor-glow-section">
-      <div className="container mx-auto max-w-[1400px]">
+    <section ref={sectionRef} id="skills" className="py-16 md:py-20 px-4 md:px-8 lg:px-12 cursor-glow-section">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 space-y-3">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
             Skills & Expertise

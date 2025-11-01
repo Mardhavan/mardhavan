@@ -4,9 +4,9 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-20 relative overflow-hidden">
-      <div className="container mx-auto max-w-[1400px] relative z-10 w-full">
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-12 py-16 md:py-20 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10 w-full">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
             <p className="text-muted-foreground text-sm md:text-base lg:text-lg">Hi, I'm</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
@@ -55,10 +55,10 @@ const Hero = () => {
           </div>
           
           {/* Photo on desktop - shown here */}
-          <div className="hidden md:flex justify-start md:justify-center lg:justify-start md:pl-8 lg:pl-12 animate-in fade-in slide-in-from-right duration-700 delay-200">
+          <div className="hidden md:flex justify-start animate-in fade-in slide-in-from-right duration-700 delay-200">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation">
                 <img 
                   src={profilePhoto} 
                   alt="Mardhavan Abbathini - Business Development Associate" 

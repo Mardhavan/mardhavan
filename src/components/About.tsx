@@ -33,8 +33,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 px-4 md:px-6 lg:px-8 bg-muted/30 cursor-glow-section">
-      <div className="container mx-auto max-w-[1400px]">
+    <section id="about" className="py-16 md:py-20 px-4 md:px-8 lg:px-12 bg-muted/30 cursor-glow-section">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 space-y-3">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
             About Me

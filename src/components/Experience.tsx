@@ -21,8 +21,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 md:px-6 lg:px-8 cursor-glow-section">
-      <div className="container mx-auto max-w-[1400px]">
+    <section id="experience" className="py-20 px-4 md:px-8 lg:px-12 cursor-glow-section">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text">
             Work Experience
