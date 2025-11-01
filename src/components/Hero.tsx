@@ -4,26 +4,26 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700">
-            <p className="text-muted-foreground text-lg">Hello, I'm</p>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="gradient-text">Mardhavan Abbathini</span>
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 md:px-12 py-20 bg-gradient-bg relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-30"></div>
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-4 animate-in fade-in slide-in-from-left duration-700">
+            <p className="text-muted-foreground text-base md:text-lg">Hi, I'm</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <span className="gradient-text">MARDHAVAN ABBATHINI</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground font-light typing-animation inline-block">
               Business Development Associate
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              A results-driven Business Development Associate with hands-on experience in B2C sales, 
-              client acquisition, and account management. Specialized in leveraging CRM platforms and 
-              sales automation tools to drive lead generation and increase customer retention.
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
+              Transforming business challenges into growth opportunities through strategic B2C sales, 
+              client acquisition, and data-driven CRM solutions.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-6">
               <Button 
                 size="lg" 
-                className="bg-gradient-hero hover:opacity-90 transition-all shadow-medium"
+                className="bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow transition-all duration-300 border-0"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
@@ -31,7 +31,7 @@ const Hero = () => {
               <a 
                 href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
                 download="Mardhavan_Abbathini_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border border-primary text-primary hover:bg-primary/10 transition-colors font-medium text-sm"
+                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border-2 border-foreground/20 text-foreground hover:bg-foreground/5 hover:border-primary transition-all duration-300 font-medium text-sm"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
@@ -41,8 +41,8 @@ const Hero = () => {
           
           <div className="flex justify-center animate-in fade-in slide-in-from-right duration-700 delay-200">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary shadow-large">
+              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation">
                 <img 
                   src={profilePhoto} 
                   alt="Mardhavan Abbathini - Business Development Associate" 
