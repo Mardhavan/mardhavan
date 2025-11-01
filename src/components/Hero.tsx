@@ -31,7 +31,7 @@ const Hero = () => {
               <a 
                 href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
                 download="Mardhavan_Abbathini_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border-2 border-foreground/20 text-foreground hover:bg-foreground/5 hover:border-primary transition-all duration-300 font-medium text-sm"
+                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow transition-all duration-300 font-medium text-sm border-0"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
