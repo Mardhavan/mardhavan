@@ -118,7 +118,7 @@ All colors MUST be HSL.
     transform-origin: left;
   }
   
-  /* Modern mesh gradient background */
+  /* Elegant floating orbs background */
   body::before {
     content: '';
     position: fixed;
@@ -128,10 +128,11 @@ All colors MUST be HSL.
     height: 100%;
     z-index: -1;
     background: 
-      radial-gradient(ellipse 800px 600px at 10% 20%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse 600px 800px at 90% 80%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse 700px 500px at 50% 50%, hsl(var(--secondary) / 0.05) 0%, transparent 50%);
-    animation: mesh-move 20s ease-in-out infinite;
+      radial-gradient(circle 600px at 20% 30%, hsl(var(--primary) / 0.12) 0%, transparent 60%),
+      radial-gradient(circle 500px at 80% 70%, hsl(var(--accent) / 0.1) 0%, transparent 60%),
+      radial-gradient(circle 400px at 50% 90%, hsl(var(--secondary) / 0.08) 0%, transparent 60%),
+      radial-gradient(circle 550px at 90% 20%, hsl(var(--primary) / 0.08) 0%, transparent 60%);
+    animation: float-orbs 25s ease-in-out infinite;
   }
   
   body::after {
@@ -142,26 +143,21 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: 
-      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
-      linear-gradient(0deg, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 100px 100px;
-    opacity: 0.2;
-    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+    background: 
+      radial-gradient(circle 400px at 60% 40%, hsl(var(--accent) / 0.06) 0%, transparent 50%),
+      radial-gradient(circle 350px at 30% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%);
+    animation: float-orbs 20s ease-in-out infinite reverse;
   }
   
-  @keyframes mesh-move {
+  @keyframes float-orbs {
     0%, 100% {
-      transform: translate(0, 0);
+      transform: translate(0, 0) scale(1);
     }
-    25% {
-      transform: translate(30px, -30px);
+    33% {
+      transform: translate(30px, -40px) scale(1.05);
     }
-    50% {
-      transform: translate(-20px, 20px);
-    }
-    75% {
-      transform: translate(20px, 10px);
+    66% {
+      transform: translate(-40px, 30px) scale(0.95);
     }
   }
   
