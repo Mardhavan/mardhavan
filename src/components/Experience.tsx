@@ -24,8 +24,8 @@ const Experience = () => {
     <section id="experience" className="py-20 px-4 cursor-glow-section">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Work <span className="gradient-text">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Work Experience
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A journey of growth, learning, and delivering exceptional results

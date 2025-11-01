@@ -36,8 +36,8 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 bg-muted/30 cursor-glow-section">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Get In <span className="gradient-text">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Get In Touch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Let's connect and create something amazing together.

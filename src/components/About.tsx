@@ -36,8 +36,8 @@ const About = () => {
     <section id="about" className="py-16 md:py-20 px-6 md:px-12 bg-muted/30 cursor-glow-section">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 space-y-3">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            About <span className="gradient-text">Me</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+            About Me
           </h2>
         </div>
 
