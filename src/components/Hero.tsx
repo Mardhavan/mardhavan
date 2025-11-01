@@ -28,7 +28,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <h2 className="text-lg md:text-xl lg:text-3xl text-primary font-bold typing-animation inline-block">
+            <h2 className="text-lg md:text-xl lg:text-3xl text-foreground font-bold typing-animation inline-block">
               Business Development Associate
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
