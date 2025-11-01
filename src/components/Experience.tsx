@@ -21,7 +21,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="py-20 px-4 cursor-glow-section">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -36,7 +36,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <Card 
               key={index} 
-              className="p-8 hover:shadow-medium transition-all bg-gradient-card relative overflow-hidden group"
+              className="p-8 hover:shadow-glow transition-all bg-gradient-card relative overflow-hidden group hover-glow-card"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-hero"></div>
               <div className="ml-4">

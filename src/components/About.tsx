@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 px-6 md:px-12 bg-muted/20">
+    <section id="about" className="py-16 md:py-20 px-6 md:px-12 bg-muted/30 cursor-glow-section">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 space-y-3">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -53,7 +53,7 @@ const About = () => {
         </div>
 
         <div className="mb-12">
-          <Card className="p-6 md:p-8 bg-card/30 border-primary/10 backdrop-blur-sm">
+          <Card className="p-6 md:p-8 bg-card/30 border-primary/10 backdrop-blur-sm hover-glow-card hover:shadow-glow transition-all">
             <p className="text-base md:text-lg leading-relaxed text-foreground/90">
               As a Business Development Associate at Applywizz, I specialize in B2C sales, client acquisition, 
               and account management. My expertise lies in leveraging CRM platforms and 
@@ -68,7 +68,7 @@ const About = () => {
           {highlights.map((highlight, index) => (
             <Card 
               key={index} 
-              className="p-5 text-center hover:shadow-medium transition-all hover:-translate-y-1 bg-card/30 border-primary/10"
+              className="p-5 text-center hover:shadow-glow transition-all hover:-translate-y-1 bg-card/30 border-primary/10 hover-glow-card"
             >
               <div className="mb-3 flex justify-center">
                 <div className="w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center">
