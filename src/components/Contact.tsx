@@ -56,10 +56,10 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 md:px-0 bg-muted/30 cursor-glow-section">
       <div className="w-full max-w-full md:px-8 lg:px-12">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? Let's connect and create something amazing together.
           </p>
         </div>

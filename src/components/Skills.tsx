@@ -74,10 +74,13 @@ const Skills = () => {
   return (
     <section ref={sectionRef} id="skills" className="py-16 md:py-20 px-4 md:px-0 cursor-glow-section">
       <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-12 space-y-3">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text">
             Skills & Expertise
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Technical proficiencies and tools I use to drive business success
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-10">
