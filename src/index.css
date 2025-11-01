@@ -220,7 +220,7 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-medium);
   }
   
-  /* Cursor glow effect */
+  /* Cursor glow effect - minimal */
   .cursor-glow-section {
     position: relative;
   }
@@ -228,14 +228,14 @@ All colors MUST be HSL.
   .cursor-glow-section::before {
     content: '';
     position: fixed;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
     opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%);
-    transition: opacity 0.3s ease;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.03) 0%, transparent 70%);
+    transition: opacity 0.5s ease;
   }
   
   .cursor-glow-section:hover::before {
