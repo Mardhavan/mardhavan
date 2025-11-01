@@ -4,8 +4,8 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-20 bg-gradient-bg relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-30"></div>
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-20 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
       <div className="container mx-auto max-w-[1400px] relative z-10 w-full">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
