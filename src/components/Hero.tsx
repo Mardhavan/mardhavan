@@ -2,13 +2,11 @@ import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
 import FloatingShapes from "./FloatingShapes";
-import ShootingStars from "./ShootingStars";
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-0 py-16 md:py-20 relative overflow-hidden">
       <FloatingShapes />
-      <ShootingStars />
       <div className="w-full max-w-full md:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">

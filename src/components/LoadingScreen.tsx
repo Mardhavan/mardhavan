@@ -51,23 +51,6 @@ const LoadingScreen = ({ onLoadComplete }: { onLoadComplete: () => void }) => {
           Loading...
         </p>
       </div>
-
-      {/* Shooting stars in loading screen */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="shooting-star"
-            style={{
-              top: `${20 + i * 25}%`,
-              left: `${Math.random() * 80}%`,
-              '--delay': `${i * 1.5}s`,
-              '--duration': '1s',
-              '--angle': '45deg',
-            } as React.CSSProperties}
-          />
-        ))}
-      </div>
     </div>
   );
 };
