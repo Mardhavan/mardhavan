@@ -344,4 +344,46 @@ All colors MUST be HSL.
   .animate-twinkle {
     animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
   }
+
+  /* Shooting star effect */
+  @keyframes shooting {
+    0% {
+      transform: translateX(0) translateY(0) rotate(var(--angle, 45deg));
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(300px) translateY(300px) rotate(var(--angle, 45deg));
+      opacity: 0;
+    }
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), transparent);
+    border-radius: 50%;
+    animation: shooting var(--duration, 1s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+    box-shadow: 
+      0 0 6px 2px hsl(var(--primary) / 0.3),
+      0 0 12px 4px hsl(var(--primary) / 0.2);
+  }
+
+  .shooting-star::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 10px 2px hsl(var(--primary) / 0.8);
+  }
 }
