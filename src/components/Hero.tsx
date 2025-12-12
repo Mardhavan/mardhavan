@@ -19,11 +19,11 @@ const Hero = () => {
             <div className="flex justify-center md:hidden py-4">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
+                <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer transition-all duration-500 hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] hover:border-primary/60">
                   <img 
                     src={profilePhoto} 
                     alt="Mardhavan Abbathini - Business Development Associate" 
-                    className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
+                    className="w-full h-full object-cover object-center scale-110 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6"
                   />
                 </div>
               </div>
@@ -60,11 +60,11 @@ const Hero = () => {
           <div className="hidden md:flex justify-end items-center animate-in fade-in slide-in-from-right duration-700 delay-200">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer transition-all duration-500 hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] hover:border-primary/60">
                 <img 
                   src={profilePhoto} 
                   alt="Mardhavan Abbathini - Business Development Associate" 
-                  className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
+                  className="w-full h-full object-cover object-center scale-110 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6"
                 />
               </div>
             </div>
