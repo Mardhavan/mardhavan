@@ -6,7 +6,7 @@ const Experience = () => {
     {
       title: "Business Development Associate",
       company: "Applywizz",
-      period: "August 2024 - Present",
+      period: "August 2025 - Present",
       description:
         "Driving lead generation and sales pipeline optimization through strategic use of CRM platforms and sales automation tools. Managing client acquisition and account management in the EdTech and SaaS sectors.",
       achievements: [
