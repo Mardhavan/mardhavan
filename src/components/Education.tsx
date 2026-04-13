@@ -1,4 +1,4 @@
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const Education = () => {
@@ -8,7 +8,6 @@ const Education = () => {
       field: "Electronics and Communication Engineering",
       institution: "Jawaharlal Nehru Technological University, Hyderabad",
       period: "2020 - 2024",
-      description: "Strong foundation in engineering principles with focus on communication systems and electronics.",
       achievements: [
         "Developed expertise in technical problem-solving and analytical thinking",
         "Applied engineering concepts to business development strategies",
@@ -18,60 +17,55 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 md:px-0 cursor-glow-section">
-      <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-            Education
+    <section id="education" className="py-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Academic Background</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Education.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Academic foundation and continuous pursuit of knowledge
-          </p>
         </div>
 
-        <div className="space-y-8">
+        {/* Timeline */}
+        <div className="relative">
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-muted-foreground/20 -translate-x-1/2 hidden md:block" />
+
           {education.map((edu, index) => (
-            <Card 
-              key={index} 
-              className="p-8 hover:shadow-glow transition-all bg-gradient-card relative overflow-hidden hover-glow-card"
-            >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-hero"></div>
-              <div className="ml-4">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-1">
-                      {edu.degree} - {edu.field}
-                    </h3>
-                    <div className="flex items-center text-primary gap-2">
-                      <GraduationCap className="h-5 w-5" />
-                      <span className="font-semibold">{edu.institution}</span>
-                    </div>
+            <div key={index} className="relative flex flex-col md:flex-row items-center mb-12">
+              {/* Card on left */}
+              <div className="w-full md:w-[45%] md:pr-12">
+                <Card className="p-6 md:p-8 bg-card/50 border-primary/10 backdrop-blur-sm hover:shadow-glow transition-all">
+                  <h3 className="text-xl md:text-2xl font-bold mb-1">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-primary font-semibold mb-1">{edu.field}</p>
+                  <div className="flex items-center gap-2 text-muted-foreground mb-4">
+                    <GraduationCap className="h-4 w-4" />
+                    <span className="text-sm">{edu.institution}</span>
                   </div>
-                  <div className="text-muted-foreground mt-2 md:mt-0 font-medium">
-                    {edu.period}
-                  </div>
-                </div>
-                
-                <p className="text-foreground/80 mb-4 leading-relaxed">
-                  {edu.description}
-                </p>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Award className="h-4 w-4" />
-                    <h4>Key Highlights:</h4>
-                  </div>
-                  <ul className="space-y-1">
+                  <ul className="space-y-2">
                     {edu.achievements.map((achievement, i) => (
                       <li key={i} className="text-sm text-muted-foreground flex items-start">
-                        <span className="text-secondary mr-2">▸</span>
+                        <span className="text-secondary mr-2 mt-1">•</span>
                         {achievement}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Card>
               </div>
-            </Card>
+
+              {/* Circle connector */}
+              <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-muted border-4 border-background items-center justify-center z-10">
+                <div className="w-3 h-3 rounded-full bg-primary/50" />
+              </div>
+
+              {/* Date on right */}
+              <div className="w-full md:w-[45%] md:pl-12 mt-4 md:mt-0">
+                <p className="text-muted-foreground font-medium text-center md:text-left">
+                  {edu.period}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
