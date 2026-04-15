@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import LoadingScreen from "@/components/LoadingScreen";
+import StarField from "@/components/StarField";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +22,7 @@ const Index = () => {
     <>
       {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
       <div className={`min-h-screen ${isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
+        <StarField />
         <ScrollProgress />
         <Navigation />
         <Hero />

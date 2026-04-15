@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
+import contactGlobe from "@/assets/contact-globe.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,9 +21,7 @@ const Contact = () => {
       message: formData.get("message") as string,
     };
 
-    await supabase.functions.invoke("send-contact-email", {
-      body: data,
-    });
+    await supabase.functions.invoke("send-contact-email", { body: data });
 
     toast.success("Message sent successfully! I'll get back to you soon.");
     e.currentTarget.reset();
@@ -32,7 +31,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Form side */}
           <div className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-8 md:p-10">
             <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Get in touch</p>
@@ -75,30 +74,23 @@ const Contact = () => {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-hero hover:opacity-90 transition-all disabled:opacity-50"
+                className="w-full bg-primary hover:bg-primary/90 transition-all disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : "Send"}
               </Button>
             </form>
           </div>
 
-          {/* Decorative side */}
+          {/* Globe illustration */}
           <div className="hidden md:flex items-center justify-center">
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Decorative orbiting rings */}
-              <div className="absolute inset-0 rounded-full border border-primary/20 animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-4 rounded-full border border-accent/15 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
-              <div className="absolute inset-8 rounded-full border border-secondary/10 animate-spin" style={{ animationDuration: '25s' }} />
-              
-              {/* Central glow */}
-              <div className="absolute inset-12 rounded-full bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 blur-2xl animate-pulse" />
-              <div className="absolute inset-16 rounded-full bg-gradient-to-tr from-primary/30 to-accent/20 blur-xl" />
-              
-              {/* Floating dots around the sphere */}
-              <div className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '0s' }} />
-              <div className="absolute bottom-0 right-1/4 w-3 h-3 rounded-full bg-accent/60 animate-bounce" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute top-1/4 right-0 w-2 h-2 rounded-full bg-secondary animate-bounce" style={{ animationDelay: '1s' }} />
-            </div>
+            <img 
+              src={contactGlobe} 
+              alt="Contact globe" 
+              className="w-72 lg:w-96 float-animation"
+              loading="lazy"
+              width={800}
+              height={800}
+            />
           </div>
         </div>
       </div>

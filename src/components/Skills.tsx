@@ -14,6 +14,14 @@ const Skills = () => {
     "Google Analytics for Beginners – Google Analytics Academy",
   ];
 
+  // Arrange skills in rows like the reference (6-4-3 pattern)
+  const rows = [
+    skills.slice(0, 6),
+    skills.slice(6, 10),
+    skills.slice(10, 14),
+    skills.slice(14),
+  ];
+
   return (
     <section id="skills" className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -22,16 +30,22 @@ const Skills = () => {
           Skills.
         </h2>
 
-        {/* Floating skill badges - arranged in rows like the reference's icon layout */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-16">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="group px-5 py-3 rounded-xl bg-card/50 border border-primary/10 hover:border-primary/40 hover:shadow-glow backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 cursor-default"
-            >
-              <span className="text-sm md:text-base font-medium text-foreground group-hover:text-primary transition-colors">
-                {skill}
-              </span>
+        {/* Skills arranged in centered rows */}
+        <div className="flex flex-col items-center gap-8 mb-16">
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex flex-wrap justify-center gap-6 md:gap-10">
+              {row.map((skill, index) => (
+                <div
+                  key={index}
+                  className="group flex flex-col items-center gap-2 hover:-translate-y-2 transition-transform duration-300 cursor-default"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-card/30 border border-primary/10 flex items-center justify-center group-hover:border-primary/40 group-hover:shadow-glow transition-all">
+                    <span className="text-xs md:text-sm font-bold text-primary text-center px-1 leading-tight">
+                      {skill.split(' ').length > 2 ? skill.split(' ').slice(0, 2).join(' ') : skill}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           ))}
         </div>

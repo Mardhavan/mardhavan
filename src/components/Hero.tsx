@@ -1,37 +1,20 @@
-import { ArrowRight, Download, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import profilePhoto from "@/assets/profile-photo.png";
-import FloatingShapes from "./FloatingShapes";
+import { Linkedin, Download } from "lucide-react";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 md:px-12 py-20 relative overflow-hidden">
-      <FloatingShapes />
       <div className="w-full max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           <div className="space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
               Hi, I'm
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
               <span className="gradient-text">Mardhavan</span>
             </h1>
             
-            {/* Photo on mobile */}
-            <div className="flex justify-center md:hidden py-4">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Mardhavan Abbathini - Business Development Associate" 
-                    className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex flex-wrap gap-3 pt-6">
               <a
                 href="https://www.linkedin.com/in/mardhavan-abbathini-b34b59259"
                 target="_blank"
@@ -52,17 +35,16 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Photo on desktop */}
-          <div className="hidden md:flex justify-center items-center animate-in fade-in slide-in-from-right duration-700 delay-200">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
-                <img 
-                  src={profilePhoto} 
-                  alt="Mardhavan Abbathini - Business Development Associate" 
-                  className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
-                />
-              </div>
+          {/* Hero illustration */}
+          <div className="flex justify-center items-center animate-in fade-in slide-in-from-right duration-700 delay-200">
+            <div className="relative float-animation">
+              <img 
+                src={heroIllustration} 
+                alt="Business Development Illustration" 
+                className="w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] object-contain"
+                width={1024}
+                height={1024}
+              />
             </div>
           </div>
         </div>
@@ -72,6 +54,13 @@ const Hero = () => {
           <p className="text-6xl md:text-8xl font-extrabold whitespace-nowrap animate-scroll-text text-foreground">
             Business Development Associate. Business Development Associate.
           </p>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1">
+          <div className="w-1.5 h-3 rounded-full bg-muted-foreground/50 animate-bounce" />
         </div>
       </div>
     </section>
