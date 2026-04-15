@@ -1,5 +1,3 @@
-import { Card } from "@/components/ui/card";
-
 const Experience = () => {
   const experiences = [
     {
@@ -36,8 +34,8 @@ const Experience = () => {
             <div key={index} className="relative flex flex-col md:flex-row items-center mb-12">
               {/* Card on left */}
               <div className="w-full md:w-[45%] md:pr-12">
-                <Card className="p-6 md:p-8 bg-card/50 border-primary/10 backdrop-blur-sm hover:shadow-glow transition-all">
-                  <h3 className="text-xl md:text-2xl font-bold mb-1">{exp.title}</h3>
+                <div className="p-6 md:p-8 bg-card/30 border border-primary/10 backdrop-blur-sm rounded-2xl hover:shadow-glow transition-all">
+                  <h3 className="text-xl md:text-2xl font-bold mb-1 text-foreground">{exp.title}</h3>
                   <p className="text-primary font-semibold mb-4">{exp.company}</p>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, i) => (
@@ -47,7 +45,7 @@ const Experience = () => {
                       </li>
                     ))}
                   </ul>
-                </Card>
+                </div>
               </div>
 
               {/* Circle connector */}
