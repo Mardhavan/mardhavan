@@ -1,10 +1,11 @@
+import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
-import contactGlobe from "@/assets/contact-globe.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,81 +18,141 @@ const Contact = () => {
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
-      subject: "Contact Form",
+      subject: formData.get("subject") as string,
       message: formData.get("message") as string,
     };
 
-    await supabase.functions.invoke("send-contact-email", { body: data });
+    await supabase.functions.invoke("send-contact-email", {
+      body: data,
+    });
 
     toast.success("Message sent successfully! I'll get back to you soon.");
     e.currentTarget.reset();
     setIsSubmitting(false);
   };
 
-  return (
-    <section id="contact" className="py-20 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Form side */}
-          <div className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-8 md:p-10">
-            <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Get in touch</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-              Contact.
-            </h2>
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "mardhavan5320@gmail.com",
+      link: "mailto:mardhavan5320@gmail.com",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "Mardhavan Abbathini",
+      link: "https://www.linkedin.com/in/mardhavan-abbathini-b34b59259",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Hyderabad, India",
+      link: null,
+    },
+  ];
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+  return (
+    <section id="contact" className="py-20 px-4 md:px-0 bg-muted/30 cursor-glow-section">
+      <div className="w-full max-w-full md:px-8 lg:px-12">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Get In Touch
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Have a project in mind or want to collaborate? Let's connect and create something amazing together.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="p-8 bg-gradient-card hover-glow-card hover:shadow-glow transition-all">
+            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  {info.link ? (
+                    <a
+                      href={info.link}
+                      target={info.icon === Mail ? "_self" : "_blank"}
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform cursor-pointer"
+                    >
+                      <info.icon className="h-5 w-5 text-white" />
+                    </a>
+                  ) : (
+                    <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0">
+                      <info.icon className="h-5 w-5 text-white" />
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-sm text-muted-foreground">{info.label}</p>
+                    {info.link ? (
+                      <a
+                        href={info.link}
+                        target={info.icon === Mail ? "_self" : "_blank"}
+                        rel="noopener noreferrer"
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-foreground">{info.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card className="p-8 bg-gradient-card hover-glow-card hover:shadow-glow transition-all">
+            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Your Name</label>
                 <Input
                   type="text"
                   name="name"
-                  placeholder="What's your good name?"
+                  placeholder="Your Name"
                   required
-                  className="bg-background/50 border-muted-foreground/20 focus:border-primary"
+                  className="bg-background/50"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Your email</label>
                 <Input
                   type="email"
                   name="email"
-                  placeholder="What's your web address?"
+                  placeholder="Your Email"
                   required
-                  className="bg-background/50 border-muted-foreground/20 focus:border-primary"
+                  className="bg-background/50"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Your Message</label>
+                <Input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                  className="bg-background/50"
+                />
+              </div>
+              <div>
                 <Textarea
                   name="message"
-                  placeholder="What you want to say?"
+                  placeholder="Your Message"
                   required
-                  rows={6}
-                  className="bg-background/50 border-muted-foreground/20 focus:border-primary resize-none"
+                  rows={5}
+                  className="bg-background/50 resize-none"
                 />
               </div>
               <Button
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-primary/90 transition-all disabled:opacity-50"
+                className="w-full bg-gradient-hero hover:opacity-90 transition-all shadow-medium disabled:opacity-50"
               >
-                {isSubmitting ? "Sending..." : "Send"}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
-          </div>
-
-          {/* Globe illustration */}
-          <div className="hidden md:flex items-center justify-center">
-            <img 
-              src={contactGlobe} 
-              alt="Contact globe" 
-              className="w-72 lg:w-96 float-animation"
-              loading="lazy"
-              width={800}
-              height={800}
-            />
-          </div>
+          </Card>
         </div>
       </div>
     </section>

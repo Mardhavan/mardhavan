@@ -306,20 +306,6 @@ All colors MUST be HSL.
     opacity: 1;
   }
 
-  /* Scrolling text animation */
-  @keyframes scroll-text {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-scroll-text {
-    animation: scroll-text 20s linear infinite;
-  }
-
   /* Sparkle/Twinkle animation */
   @keyframes sparkle {
     0%, 100% {

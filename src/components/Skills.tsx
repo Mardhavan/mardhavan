@@ -1,11 +1,68 @@
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useRef, useState } from "react";
 
 const Skills = () => {
-  const skills = [
-    "HubSpot CRM", "Salesforce", "Apollo.io", "LinkedIn Sales Navigator",
-    "B2C Lead Generation", "Sales Pipeline", "Client Acquisition", "Account Retention",
-    "SimilarWeb", "SEMrush", "Power BI", "Google Analytics 4",
-    "Lemlist", "Mailchimp", "Zapier", "ROI Modeling", "Proposal Writing",
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+  const skillCategories = [
+    {
+      category: "CRM & Outreach Platforms",
+      skills: [
+        { name: "HubSpot CRM", level: 90 },
+        { name: "Salesforce", level: 85 },
+        { name: "Apollo.io", level: 85 },
+        { name: "LinkedIn Sales Navigator", level: 90 },
+      ],
+    },
+    {
+      category: "Sales & Account Management",
+      skills: [
+        { name: "B2C Lead Generation", level: 90 },
+        { name: "Sales Pipeline Optimization", level: 85 },
+        { name: "Client Acquisition", level: 90 },
+        { name: "Account Retention", level: 85 },
+      ],
+    },
+    {
+      category: "Market Research & Analytics",
+      skills: [
+        { name: "SimilarWeb", level: 80 },
+        { name: "SEMrush", level: 80 },
+        { name: "Power BI", level: 85 },
+        { name: "Google Analytics 4", level: 85 },
+      ],
+    },
+    {
+      category: "Communication & Automation",
+      skills: [
+        { name: "Email Marketing (Lemlist, Mailchimp)", level: 90 },
+        { name: "Proposal Writing", level: 90 },
+        { name: "ROI Modeling", level: 85 },
+        { name: "Sales Automation (Zapier)", level: 80 },
+      ],
+    },
   ];
 
   const certifications = [
@@ -14,57 +71,55 @@ const Skills = () => {
     "Google Analytics for Beginners – Google Analytics Academy",
   ];
 
-  // Arrange skills in rows like the reference (6-4-3 pattern)
-  const rows = [
-    skills.slice(0, 6),
-    skills.slice(6, 10),
-    skills.slice(10, 14),
-    skills.slice(14),
-  ];
-
   return (
-    <section id="skills" className="py-20 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Tech</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12">
-          Skills.
-        </h2>
+    <section ref={sectionRef} id="skills" className="py-16 md:py-20 px-4 md:px-0 cursor-glow-section">
+      <div className="w-full max-w-full md:px-8 lg:px-12">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+            Skills & Expertise
+          </h2>
+        </div>
 
-        {/* Skills arranged in centered rows */}
-        <div className="flex flex-col items-center gap-8 mb-16">
-          {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex flex-wrap justify-center gap-6 md:gap-10">
-              {row.map((skill, index) => (
-                <div
-                  key={index}
-                  className="group flex flex-col items-center gap-2 hover:-translate-y-2 transition-transform duration-300 cursor-default"
-                >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-card/30 border border-primary/10 flex items-center justify-center group-hover:border-primary/40 group-hover:shadow-glow transition-all">
-                    <span className="text-xs md:text-sm font-bold text-primary text-center px-1 leading-tight">
-                      {skill.split(' ').length > 2 ? skill.split(' ').slice(0, 2).join(' ') : skill}
-                    </span>
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {skillCategories.map((category, index) => (
+            <Card key={index} className="p-5 md:p-6 bg-card/30 border-primary/10 hover:shadow-glow transition-all backdrop-blur-sm hover-glow-card">
+              <h3 className="text-lg font-bold mb-5 gradient-text">{category.category}</h3>
+              <div className="space-y-4">
+                {category.skills.map((skill, i) => (
+                  <div key={i}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-medium">{skill.name}</span>
+                      <span className="text-xs text-muted-foreground font-semibold">{skill.level}%</span>
+                    </div>
+                    <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-hero transition-all duration-1000 ease-out rounded-full"
+                        style={{ width: isVisible ? `${skill.level}%` : '0%' }}
+                      ></div>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Card>
           ))}
         </div>
 
-        {/* Certifications */}
-        <div className="text-center">
-          <h3 className="text-xl font-bold mb-6 text-foreground">Certifications</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+        <Card className="p-6 md:p-8 bg-card/30 border-primary/10 backdrop-blur-sm hover-glow-card hover:shadow-glow transition-all">
+          <h3 className="text-lg md:text-xl font-bold mb-5 gradient-text text-center">
+            Certifications
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {certifications.map((cert, index) => (
               <Badge 
                 key={index} 
                 variant="secondary"
-                className="text-xs md:text-sm px-4 py-2 bg-primary/10 text-foreground hover:bg-primary/20 transition-colors border border-primary/20"
+                className="text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 bg-primary/10 text-foreground hover:bg-primary/20 transition-colors border border-primary/20"
               >
                 {cert}
               </Badge>
             ))}
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );
