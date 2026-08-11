@@ -22,7 +22,7 @@ const Hero = () => {
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
                   <img 
                     src={profilePhoto} 
-                    alt="Mardhavan Abbathini - Business Development Associate" 
+                    alt="Mardhavan Abbathini - Business Development Manager" 
                     className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
                   />
                 </div>
@@ -30,11 +30,11 @@ const Hero = () => {
             </div>
             
             <h2 className="text-lg md:text-xl lg:text-3xl text-foreground font-bold typing-animation inline-block">
-              Business Development Associate
+              Business Development Manager
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
-              Transforming business challenges into growth opportunities through strategic B2C sales, 
-              client acquisition, and data-driven CRM solutions.
+              Driving revenue growth across AI-powered career solutions, SaaS, and EdTech — leading an 
+              8-member team generating ~$80K in monthly revenue through consultative selling and GTM execution.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 pt-4 md:pt-6">
             <Button 
@@ -46,7 +46,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <a 
-                href="/MARDHAVAN_ABBATHINI_BDA.pdf" 
+                href="/MARDHAVAN_ABBATHINI_BDM.pdf" 
                 download="Mardhavan_Abbathini_Resume.pdf"
                 className="group inline-flex items-center justify-center gap-2 h-10 md:h-11 rounded-md px-6 md:px-8 bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow hover:scale-105 transition-all duration-300 font-medium text-sm border-0"
               >
@@ -63,7 +63,7 @@ const Hero = () => {
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
                 <img 
                   src={profilePhoto} 
-                  alt="Mardhavan Abbathini - Business Development Associate" 
+                  alt="Mardhavan Abbathini - Business Development Manager" 
                   className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
                 />
               </div>

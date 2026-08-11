@@ -4,6 +4,18 @@ import { Card } from "@/components/ui/card";
 const Education = () => {
   const education = [
     {
+      degree: "Bachelor of Business Administration",
+      field: "Business Administration",
+      institution: "ICFAI Business School (IBS), India",
+      period: "2025 - Present",
+      description: "Building a formal business foundation in sales, marketing, and management alongside a full-time business development career.",
+      achievements: [
+        "Applying management coursework directly to GTM strategy and revenue execution",
+        "Strengthening financial, marketing, and operations fundamentals",
+        "Balancing academic study with leading a business development team",
+      ],
+    },
+    {
       degree: "Bachelor of Technology",
       field: "Electronics and Communication Engineering",
       institution: "Jawaharlal Nehru Technological University, Hyderabad",

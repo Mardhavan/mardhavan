@@ -6,30 +6,30 @@ const About = () => {
     {
       icon: Code,
       title: "CRM & Sales Tech",
-      description: "Expert in HubSpot, Salesforce, Apollo.io, and LinkedIn Sales Navigator",
+      description: "HubSpot CRM, LinkedIn Sales Navigator, Mailchimp and sales reporting tools",
     },
     {
       icon: Target,
-      title: "Results-Driven",
-      description: "35% improvement in pipeline efficiency and 22% increase in conversions",
+      title: "Team Leadership",
+      description: "Leading an 8-member business development team across AI, SaaS and EdTech",
     },
     {
       icon: Lightbulb,
-      title: "Strategic Thinker",
-      description: "Data-driven approach to sales optimization and lead generation",
+      title: "GTM Strategy",
+      description: "Market research, customer segmentation and data-driven pipeline execution",
     },
     {
       icon: TrendingUp,
       title: "Revenue Growth",
-      description: "Secured contracts exceeding ₹15L through strategic partnerships",
+      description: "~$80K monthly team revenue through consultative selling and retention",
     },
   ];
 
   const stats = [
-    { value: "200+", label: "Qualified Leads/Quarter" },
-    { value: "35%", label: "Pipeline Growth" },
-    { value: "₹15L+", label: "Contracts Secured" },
-    { value: "25%", label: "Faster Onboarding" },
+    { value: "$80K+", label: "Monthly Team Revenue" },
+    { value: "8", label: "Member BD Team Led" },
+    { value: "200+", label: "Qualified Leads Generated" },
+    { value: "150+", label: "Partners Added to Pipeline" },
   ];
 
   return (
@@ -58,11 +58,12 @@ const About = () => {
         <div className="mb-12">
           <Card className="p-6 md:p-8 bg-card/30 border-primary/10 backdrop-blur-sm hover-glow-card hover:shadow-glow transition-all">
             <p className="text-base md:text-lg leading-relaxed text-foreground/90">
-              As a Business Development Associate at Applywizz, I specialize in B2C sales, client acquisition, 
-              and account management. My expertise lies in leveraging CRM platforms and 
-              sales automation tools to efficiently manage sales pipelines and drive lead generation. 
-              I've successfully optimized outreach efforts, achieving a 35% improvement in reply rates and 
-              a 20% increase in operational efficiency.
+              I'm a Business Development professional with hands-on experience in AI-powered career solutions, 
+              SaaS, and EdTech sales — specializing in lead generation, client acquisition, account management, 
+              and revenue growth. I currently lead an 8-member business development team generating approximately 
+              $80,000 in monthly revenue through consultative selling, pipeline management, and GTM execution. 
+              I work closely with product, operations, marketing, and customer success teams to optimize sales 
+              processes, strengthen client relationships, and deliver measurable business outcomes.
             </p>
           </Card>
         </div>

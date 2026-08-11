@@ -4,18 +4,46 @@ import { Card } from "@/components/ui/card";
 const Experience = () => {
   const experiences = [
     {
-      title: "Business Development Associate",
-      company: "Applywizz",
-      period: "August 2025 - Present",
+      title: "Business Development Manager – AI Solutions",
+      company: "Apply Wizz",
+      period: "Jun 2026 - Present",
       description:
-        "Driving lead generation and sales pipeline optimization through strategic use of CRM platforms and sales automation tools. Managing client acquisition and account management in the EdTech and SaaS sectors.",
+        "Directing business development for AI-powered career solutions, owning the end-to-end sales cycle from inbound and outbound opportunity generation through onboarding and retention.",
       achievements: [
-        "Created dynamic lead generation strategy identifying 200+ qualified leads per quarter, improving pipeline by 35%",
-        "Optimized outreach efforts through HubSpot CRM and Lemlist, achieving 35% improvement in reply rates and 40% faster response times",
-        "Integrated HubSpot automation with Google Sheets, enhancing operational efficiency by 20%",
-        "Collaborated with marketing and analytics teams, resulting in 22% increase in lead-to-demo conversion rates",
-        "Developed custom business proposals securing contracts exceeding ₹15L in the EdTech sector",
-        "Automated client onboarding process, reducing timelines by 25%",
+        "Generating approximately $70,000 in monthly revenue through consultative selling and structured pipeline execution",
+        "Developed GTM strategies using CRM, market research, customer segmentation, and inbound lead analysis to expand the qualified pipeline",
+        "Managed the end-to-end sales cycle with product, operations, and customer success teams to convert inquiries and strengthen retention",
+        "Optimized sales performance via CRM reporting, KPI tracking, pipeline analysis, and revenue forecasting",
+      ],
+    },
+    {
+      title: "Senior Business Development Associate",
+      company: "Apply Wizz",
+      period: "Jan 2026 - May 2026",
+      description:
+        "Led a 4-member B2C EdTech sales team, managing high-ticket learner counseling, pipeline conversion, and revenue execution.",
+      achievements: [
+        "Generated approximately $55,000 in monthly revenue through structured follow-ups and performance reviews",
+        "Generated 200+ qualified leads across priority markets using LinkedIn Sales Navigator",
+        "Leveraged HubSpot CRM to manage pipeline progression, forecasting, and the full lead-to-enrollment lifecycle",
+        "Improved customer retention and referrals through consultative selling and proactive engagement",
+        "Negotiated partnerships with education consultancies and institutional stakeholders to expand market presence",
+        "Collaborated with marketing and leadership to optimize campaigns and refine outreach through data-driven decisions",
+      ],
+    },
+    {
+      title: "Business Development Associate",
+      company: "Apply Wizz",
+      period: "Aug 2025 - Dec 2025",
+      description:
+        "Drove prospecting, lead qualification, and outreach execution across EdTech and SaaS segments while supporting partnership development.",
+      achievements: [
+        "Generated over $25,000 in revenue by converting qualified prospects through LinkedIn Sales Navigator and sales outreach",
+        "Added 150+ prospective education partners and consultancies to the pipeline",
+        "Maintained accurate prospect records and follow-up schedules in HubSpot CRM for reliable pipeline tracking",
+        "Researched competitor offerings using SEMrush, SimilarWeb, and Ahrefs to guide prospect targeting",
+        "Executed targeted email outreach campaigns with Mailchimp to strengthen lead nurturing",
+        "Prepared sales presentations and proposals in PowerPoint and Excel for universities and consultancies",
       ],
     },
   ];
