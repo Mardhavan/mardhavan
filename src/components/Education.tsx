@@ -5,7 +5,7 @@ const Education = () => {
   const education = [
     {
       degree: "Bachelor of Business Administration",
-      field: "Business Administration",
+      field: "",
       institution: "ICFAI Business School (IBS), India",
       period: "2025 - Present",
       description: "Building a formal business foundation in sales, marketing, and management alongside a full-time business development career.",
@@ -52,7 +52,7 @@ const Education = () => {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-1">
-                      {edu.degree} - {edu.field}
+                      {edu.field ? `${edu.degree} - ${edu.field}` : edu.degree}
                     </h3>
                     <div className="flex items-center text-primary gap-2">
                       <GraduationCap className="h-5 w-5" />

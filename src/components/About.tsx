@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Target,
       title: "Team Leadership",
-      description: "Leading a team of business development associates across AI, SaaS and EdTech",
+      description: "Leading, coaching and scaling a high-performing business development team",
     },
     {
       icon: Lightbulb,
@@ -21,15 +21,15 @@ const About = () => {
     {
       icon: TrendingUp,
       title: "Revenue Growth",
-      description: "~$80K monthly team revenue through consultative selling and retention",
+      description: "Consistent quarter-over-quarter growth through consultative selling and retention",
     },
   ];
 
   const stats = [
-    { value: "80K+", label: "Leads Generated" },
-    { value: "150+", label: "Partners Added to Pipeline" },
+    { value: "150+", label: "Strategic Partnerships Built" },
     { value: "30%", label: "Quarterly Revenue Growth" },
-    { value: "Team", label: "of Business Development Associates" },
+    { value: "3+", label: "Years in B2B Sales" },
+    { value: "3", label: "Sectors: AI, SaaS & EdTech" },
   ];
 
   return (
@@ -60,8 +60,8 @@ const About = () => {
             <p className="text-base md:text-lg leading-relaxed text-foreground/90">
               I'm a Business Development professional with hands-on experience in AI-powered career solutions, 
               SaaS, and EdTech sales — specializing in lead generation, client acquisition, account management, 
-              and revenue growth. I currently lead a team of business development associates generating approximately 
-              $80,000 in monthly revenue through consultative selling, pipeline management, and GTM execution.
+              and revenue growth. I currently lead a high-performing business development team, 
+              driving consistent revenue growth through consultative selling, pipeline management, and GTM execution.
               I work closely with product, operations, marketing, and customer success teams to optimize sales 
               processes, strengthen client relationships, and deliver measurable business outcomes.
             </p>
