@@ -33,8 +33,8 @@ const Hero = () => {
               Business Development Manager
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
-              Driving revenue growth across AI-powered career solutions, SaaS, and EdTech — leading an 
-              8-member team generating ~$80K in monthly revenue through consultative selling and GTM execution.
+              Driving growth across AI-powered career solutions, SaaS, and EdTech through strategic partnerships,
+              consultative selling, and sharp GTM execution.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 pt-4 md:pt-6">
             <Button 
