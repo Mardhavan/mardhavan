@@ -26,41 +26,42 @@ const Skills = () => {
       }
     };
   }, []);
+
   const skillCategories = [
     {
-      category: "CRM & Outreach Platforms",
+      category: "Business Development & Sales",
+      skills: [
+        { name: "SaaS & EdTech Sales", level: 90 },
+        { name: "Lead Generation & Prospecting", level: 90 },
+        { name: "Sales Pipeline Management", level: 90 },
+        { name: "Client Acquisition & Onboarding", level: 85 },
+      ],
+    },
+    {
+      category: "Customer Success & Account Management",
+      skills: [
+        { name: "Client Relationship Management", level: 90 },
+        { name: "Account Retention", level: 85 },
+        { name: "Customer Engagement", level: 90 },
+        { name: "Account Growth Support", level: 85 },
+      ],
+    },
+    {
+      category: "Market Research & Competitive Intelligence",
+      skills: [
+        { name: "Market Research", level: 85 },
+        { name: "Competitor Analysis", level: 85 },
+        { name: "SEMrush & SimilarWeb", level: 80 },
+        { name: "Ahrefs", level: 80 },
+      ],
+    },
+    {
+      category: "CRM, Reporting & Communication",
       skills: [
         { name: "HubSpot CRM", level: 90 },
-        { name: "Salesforce", level: 85 },
-        { name: "Apollo.io", level: 85 },
         { name: "LinkedIn Sales Navigator", level: 90 },
-      ],
-    },
-    {
-      category: "Sales & Account Management",
-      skills: [
-        { name: "B2C Lead Generation", level: 90 },
-        { name: "Sales Pipeline Optimization", level: 85 },
-        { name: "Client Acquisition", level: 90 },
-        { name: "Account Retention", level: 85 },
-      ],
-    },
-    {
-      category: "Market Research & Analytics",
-      skills: [
-        { name: "SimilarWeb", level: 80 },
-        { name: "SEMrush", level: 80 },
-        { name: "Power BI", level: 85 },
-        { name: "Google Analytics 4", level: 85 },
-      ],
-    },
-    {
-      category: "Communication & Automation",
-      skills: [
-        { name: "Email Marketing (Lemlist, Mailchimp)", level: 90 },
-        { name: "Proposal Writing", level: 90 },
-        { name: "ROI Modeling", level: 85 },
-        { name: "Sales Automation (Zapier)", level: 80 },
+        { name: "Mailchimp Email Outreach", level: 85 },
+        { name: "Excel, Sheets & Sales Reporting", level: 90 },
       ],
     },
   ];
