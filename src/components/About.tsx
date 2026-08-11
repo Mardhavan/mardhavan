@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Target,
       title: "Team Leadership",
-      description: "Leading an 8-member business development team across AI, SaaS and EdTech",
+      description: "Leading a team of business development associates across AI, SaaS and EdTech",
     },
     {
       icon: Lightbulb,
@@ -26,10 +26,10 @@ const About = () => {
   ];
 
   const stats = [
-    { value: "$80K+", label: "Monthly Team Revenue" },
-    { value: "8", label: "Member BD Team Led" },
-    { value: "200+", label: "Qualified Leads Generated" },
+    { value: "80K+", label: "Leads Generated" },
     { value: "150+", label: "Partners Added to Pipeline" },
+    { value: "30%", label: "Quarterly Revenue Growth" },
+    { value: "Team", label: "of Business Development Associates" },
   ];
 
   return (
@@ -60,8 +60,8 @@ const About = () => {
             <p className="text-base md:text-lg leading-relaxed text-foreground/90">
               I'm a Business Development professional with hands-on experience in AI-powered career solutions, 
               SaaS, and EdTech sales — specializing in lead generation, client acquisition, account management, 
-              and revenue growth. I currently lead an 8-member business development team generating approximately 
-              $80,000 in monthly revenue through consultative selling, pipeline management, and GTM execution. 
+              and revenue growth. I currently lead a team of business development associates generating approximately 
+              $80,000 in monthly revenue through consultative selling, pipeline management, and GTM execution.
               I work closely with product, operations, marketing, and customer success teams to optimize sales 
               processes, strengthen client relationships, and deliver measurable business outcomes.
             </p>
