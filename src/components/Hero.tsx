@@ -1,74 +1,108 @@
-import { ArrowRight, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Download, MapPin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
-import FloatingShapes from "./FloatingShapes";
+
+const metrics = [
+  { value: "$80K", label: "Monthly team revenue" },
+  { value: "8", label: "Member BD team led" },
+  { value: "350+", label: "Qualified leads & partners" },
+];
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-0 py-16 md:py-20 relative overflow-hidden">
-      <FloatingShapes />
-      <div className="w-full max-w-full md:px-8 lg:px-12 relative z-10">
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-          <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-left duration-700 w-full">
-            <p className="text-sm md:text-base lg:text-lg" style={{ color: 'hsl(25, 95%, 53%)' }}>Hi, I'm</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="gradient-text font-extrabold">MARDHAVAN ABBATHINI</span>
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center px-5 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16"
+    >
+      <div className="w-full">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-20">
+          <div className="animate-fade-up">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-10 bg-primary" />
+              <span className="eyebrow">Business Development Manager</span>
+            </div>
+
+            <h1 className="text-[2.6rem] font-bold uppercase leading-[0.95] sm:text-6xl lg:text-8xl">
+              Mardhavan
+              <br />
+              <span className="text-primary">Abbathini</span>
             </h1>
-            
-            {/* Photo on mobile - shown here */}
-            <div className="flex justify-center md:hidden py-4">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Mardhavan Abbathini - Business Development Manager" 
-                    className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <h2 className="text-lg md:text-xl lg:text-3xl text-foreground font-bold typing-animation inline-block">
-              Business Development Manager
-            </h2>
-            <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl pt-2">
-              Driving growth across AI-powered career solutions, SaaS, and EdTech through strategic partnerships,
-              consultative selling, and sharp GTM execution.
-            </p>
-            <div className="flex flex-wrap gap-3 md:gap-4 pt-4 md:pt-6">
-            <Button 
-                size="lg" 
-                className="group bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow hover:scale-105 transition-all duration-300 border-0 text-sm md:text-base"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Get In Touch 
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <a 
-                href="/MARDHAVAN_ABBATHINI_BDM.pdf" 
-                download="Mardhavan_Abbathini_Resume.pdf"
-                className="group inline-flex items-center justify-center gap-2 h-10 md:h-11 rounded-md px-6 md:px-8 bg-gradient-to-r from-primary via-accent to-secondary text-white hover:shadow-glow hover:scale-105 transition-all duration-300 font-medium text-sm border-0"
-              >
-                <Download className="h-4 w-4 group-hover:animate-bounce" />
-                Download Resume
-              </a>
-            </div>
-          </div>
-          
-          {/* Photo on desktop - shown here */}
-          <div className="hidden md:flex justify-end items-center animate-in fade-in slide-in-from-right duration-700 delay-200">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/30 shadow-glow float-animation group cursor-pointer">
-                <img 
-                  src={profilePhoto} 
-                  alt="Mardhavan Abbathini - Business Development Manager" 
-                  className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 group-hover:scale-125"
+
+            {/* Portrait — mobile placement */}
+            <div className="my-8 lg:hidden">
+              <div className="relative w-full max-w-[280px] border border-border">
+                <img
+                  src={profilePhoto}
+                  alt="Mardhavan Abbathini, Business Development Manager based in Hyderabad, India"
+                  className="aspect-[4/5] w-full object-cover grayscale-[35%] contrast-[1.05]"
                 />
               </div>
             </div>
+
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Revenue-focused business development leader working across AI-powered career
+              solutions, SaaS and EdTech — building pipeline, closing partnerships and running
+              GTM with a consultative, data-led sales process.
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono-ui text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                Hyderabad, India
+              </span>
+              <span className="hidden h-3 w-px bg-border sm:block" />
+              <span>Apply Wizz</span>
+              <span className="hidden h-3 w-px bg-border sm:block" />
+              <span>Open to senior BD & GTM roles</span>
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <button
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="group inline-flex h-12 items-center gap-2 bg-primary px-7 font-mono-ui text-xs uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary-light"
+              >
+                Get in touch
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+              <a
+                href="/MARDHAVAN_ABBATHINI_BDM.pdf"
+                download="Mardhavan_Abbathini_Resume.pdf"
+                className="group inline-flex h-12 items-center gap-2 border border-border px-7 font-mono-ui text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                <Download className="h-4 w-4" />
+                Download resume
+              </a>
+            </div>
           </div>
+
+          {/* Portrait — desktop placement */}
+          <div className="hidden animate-fade-up delay-200 lg:block">
+            <div className="relative border border-border">
+              <div className="absolute -left-px -top-px h-10 w-px bg-primary" />
+              <div className="absolute -left-px -top-px h-px w-10 bg-primary" />
+              <img
+                src={profilePhoto}
+                alt="Mardhavan Abbathini, Business Development Manager based in Hyderabad, India"
+                className="aspect-[4/5] w-full object-cover grayscale-[35%] contrast-[1.05]"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Metric strip */}
+        <div className="mt-14 grid grid-cols-1 border border-border sm:grid-cols-3">
+          {metrics.map((m, i) => (
+            <div
+              key={m.label}
+              className={`px-6 py-6 ${i > 0 ? "border-t border-border sm:border-l sm:border-t-0" : ""}`}
+            >
+              <div className="text-3xl font-bold text-primary md:text-4xl">{m.value}</div>
+              <div className="mt-1 font-mono-ui text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                {m.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

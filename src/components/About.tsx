@@ -1,89 +1,86 @@
-import { Code, Target, Lightbulb, TrendingUp } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Target, Users, LineChart, Handshake } from "lucide-react";
 
 const About = () => {
-  const highlights = [
-    {
-      icon: Code,
-      title: "CRM & Sales Tech",
-      description: "HubSpot CRM, LinkedIn Sales Navigator, Mailchimp and sales reporting tools",
-    },
+  const capabilities = [
     {
       icon: Target,
+      title: "Pipeline & Acquisition",
+      description:
+        "Lead generation, prospecting, qualification and full sales-funnel management across inbound and outbound motion.",
+    },
+    {
+      icon: Users,
       title: "Team Leadership",
-      description: "Leading, coaching and scaling a high-performing business development team",
+      description:
+        "Leading an 8-member business development team with structured follow-ups, performance reviews and quota ownership.",
     },
     {
-      icon: Lightbulb,
-      title: "GTM Strategy",
-      description: "Market research, customer segmentation and data-driven pipeline execution",
+      icon: LineChart,
+      title: "Revenue & Forecasting",
+      description:
+        "CRM reporting, KPI tracking, pipeline analysis and revenue forecasting that drive data-backed sales decisions.",
     },
     {
-      icon: TrendingUp,
-      title: "Revenue Growth",
-      description: "Consistent quarter-over-quarter growth through consultative selling and retention",
+      icon: Handshake,
+      title: "Partnerships & Retention",
+      description:
+        "Negotiating with consultancies and institutional stakeholders while growing accounts through consultative selling.",
     },
-  ];
-
-  const stats = [
-    { value: "150+", label: "Strategic Partnerships Built" },
-    { value: "30%", label: "Quarterly Revenue Growth" },
-    { value: "3+", label: "Years in B2B Sales" },
-    { value: "3", label: "Sectors: AI, SaaS & EdTech" },
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 px-4 md:px-0 bg-muted/30 cursor-glow-section">
-      <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-12 space-y-3">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
-            About Me
-          </h2>
+    <section id="about" className="section-shell">
+      <div className="mb-12 flex items-baseline gap-4">
+        <span className="eyebrow-muted">01</span>
+        <h2 className="text-3xl font-bold uppercase md:text-5xl">Profile</h2>
+      </div>
+
+      <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+        <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p>
+            Business Development professional with hands-on experience in{" "}
+            <span className="text-foreground">AI-powered career solutions, SaaS and EdTech sales</span>,
+            specialising in lead generation, client acquisition, account management and revenue growth.
+          </p>
+          <p>
+            Proven track record of leading an 8-member business development team generating approximately{" "}
+            <span className="text-foreground">$80,000 in monthly team revenue</span> through consultative
+            selling, pipeline management and GTM execution.
+          </p>
+          <p>
+            Skilled in CRM platforms, market research, customer segmentation, sales forecasting and business
+            performance reporting — and experienced in collaborating with product, operations, marketing and
+            customer success teams to optimise sales processes and deliver measurable outcomes across
+            competitive markets.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
-          {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="group text-center p-4 rounded-lg bg-card/50 border border-primary/10 hover:border-primary/30 hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform">
-                {stat.value}
-              </div>
-              <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+        <dl className="divide-y divide-border border-y border-border">
+          {[
+            ["Current role", "Business Development Manager — AI Solutions"],
+            ["Company", "Apply Wizz"],
+            ["Focus", "AI Career Solutions · SaaS · EdTech"],
+            ["Location", "Hyderabad, India"],
+            ["Experience", "Aug 2025 — Present"],
+          ].map(([k, v]) => (
+            <div key={k} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+              <dt className="font-mono-ui text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {k}
+              </dt>
+              <dd className="text-sm text-foreground sm:text-right">{v}</dd>
             </div>
           ))}
-        </div>
+        </dl>
+      </div>
 
-        <div className="mb-12">
-          <Card className="p-6 md:p-8 bg-card/30 border-primary/10 backdrop-blur-sm hover-glow-card hover:shadow-glow transition-all">
-            <p className="text-base md:text-lg leading-relaxed text-foreground/90">
-              I'm a Business Development professional with hands-on experience in AI-powered career solutions, 
-              SaaS, and EdTech sales — specializing in lead generation, client acquisition, account management, 
-              and revenue growth. I currently lead a high-performing business development team, 
-              driving consistent revenue growth through consultative selling, pipeline management, and GTM execution.
-              I work closely with product, operations, marketing, and customer success teams to optimize sales 
-              processes, strengthen client relationships, and deliver measurable business outcomes.
-            </p>
-          </Card>
-        </div>
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {highlights.map((highlight, index) => (
-            <Card 
-              key={index} 
-              className="group p-5 text-center hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/30 border-primary/10 hover:border-primary/30 hover-glow-card"
-            >
-              <div className="mb-3 flex justify-center">
-                <div className="w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <highlight.icon className="h-5 w-5 text-white" />
-                </div>
-              </div>
-              <h3 className="font-semibold text-sm mb-1">{highlight.title}</h3>
-              <p className="text-xs text-muted-foreground">{highlight.description}</p>
-            </Card>
-          ))}
-        </div>
+      <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        {capabilities.map((c) => (
+          <div key={c.title} className="group bg-card p-6 transition-colors hover:bg-secondary">
+            <c.icon className="h-5 w-5 text-primary" />
+            <h3 className="mt-4 text-base font-semibold">{c.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

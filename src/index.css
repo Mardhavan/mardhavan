@@ -2,97 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system: graphite executive. All colors MUST be HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 15%;
+    --background: 220 14% 5%;
+    --foreground: 40 12% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card: 220 12% 8%;
+    --card-foreground: 40 12% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover: 220 12% 8%;
+    --popover-foreground: 40 12% 96%;
 
-    --primary: 205 90% 48%;
-    --primary-foreground: 0 0% 100%;
-    
-    --primary-light: 195 85% 55%;
-    --primary-dark: 215 85% 35%;
+    --primary: 36 96% 52%;
+    --primary-foreground: 24 40% 8%;
 
-    --secondary: 185 80% 42%;
-    --secondary-foreground: 0 0% 100%;
+    --primary-light: 40 96% 62%;
+    --primary-dark: 30 90% 42%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 45%;
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 12% 92%;
 
-    --accent: 215 75% 55%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 220 10% 12%;
+    --muted-foreground: 220 8% 60%;
 
-    --destructive: 0 84.2% 60.2%;
+    --accent: 30 30% 78%;
+    --accent-foreground: 220 14% 6%;
+
+    --destructive: 0 70% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 205 90% 48%;
+    --border: 220 10% 16%;
+    --input: 220 10% 16%;
+    --ring: 36 96% 52%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --gradient-hero: linear-gradient(90deg, hsl(215 85% 45%) 0%, hsl(200 90% 50%) 50%, hsl(185 80% 45%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(205 90% 48% / 0.05) 0%, hsl(185 80% 42% / 0.05) 100%);
-    --gradient-bg: linear-gradient(135deg, hsl(210 30% 98%) 0%, hsl(205 25% 97%) 50%, hsl(200 20% 98%) 100%);
-    
-    --shadow-soft: 0 4px 6px -1px hsl(220 15% 15% / 0.1), 0 2px 4px -1px hsl(220 15% 15% / 0.06);
-    --shadow-medium: 0 10px 15px -3px hsl(220 15% 15% / 0.1), 0 4px 6px -2px hsl(220 15% 15% / 0.05);
-    --shadow-large: 0 20px 25px -5px hsl(220 15% 15% / 0.1), 0 10px 10px -5px hsl(220 15% 15% / 0.04);
-    --shadow-glow: 0 0 60px hsl(205 90% 48% / 0.28);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-hero: linear-gradient(90deg, hsl(36 96% 52%) 0%, hsl(40 96% 62%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 12% 9%) 0%, hsl(220 14% 6%) 100%);
+
+    --shadow-soft: 0 1px 0 0 hsl(220 10% 18%);
+    --shadow-medium: 0 12px 28px -18px hsl(0 0% 0% / 0.9);
+    --shadow-large: 0 30px 60px -30px hsl(0 0% 0% / 0.95);
+    --shadow-glow: 0 0 0 1px hsl(36 96% 52% / 0.35), 0 18px 40px -28px hsl(36 96% 52% / 0.55);
+
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Single fixed dark aesthetic — .dark kept in sync for any consumer. */
   .dark {
-    --background: 215 35% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 215 30% 11%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 215 30% 11%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 205 90% 48%;
-    --primary-foreground: 0 0% 100%;
-    
-    --primary-light: 195 85% 55%;
-    --primary-dark: 215 85% 35%;
-
-    --secondary: 185 80% 42%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 220 25% 15%;
-    --muted-foreground: 220 10% 65%;
-
-    --accent: 215 75% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 205 90% 48%;
-
-    --gradient-hero: linear-gradient(90deg, hsl(215 85% 45%) 0%, hsl(200 90% 50%) 50%, hsl(185 80% 45%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(205 90% 48% / 0.1) 0%, hsl(185 80% 42% / 0.1) 100%);
-    --gradient-bg: linear-gradient(135deg, hsl(215 32% 11%) 0%, hsl(212 40% 8%) 50%, hsl(205 35% 12%) 100%);
-    
-    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
-    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
-    --shadow-large: 0 20px 25px -5px hsl(0 0% 0% / 0.3), 0 10px 10px -5px hsl(0 0% 0% / 0.2);
-    --shadow-glow: 0 0 80px hsl(205 90% 48% / 0.35), 0 0 40px hsl(185 80% 42% / 0.25);
+    --background: 220 14% 5%;
+    --foreground: 40 12% 96%;
+    --card: 220 12% 8%;
+    --card-foreground: 40 12% 96%;
+    --popover: 220 12% 8%;
+    --popover-foreground: 40 12% 96%;
+    --primary: 36 96% 52%;
+    --primary-foreground: 24 40% 8%;
+    --primary-light: 40 96% 62%;
+    --primary-dark: 30 90% 42%;
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 12% 92%;
+    --muted: 220 10% 12%;
+    --muted-foreground: 220 8% 60%;
+    --accent: 30 30% 78%;
+    --accent-foreground: 220 14% 6%;
+    --border: 220 10% 16%;
+    --input: 220 10% 16%;
+    --ring: 36 96% 52%;
   }
 }
 
@@ -101,289 +79,89 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    position: relative;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  /* Scroll progress indicator */
-  .scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
-    z-index: 100;
-    transform-origin: left;
-  }
-  
-  /* Elegant floating orbs background */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: 
-      radial-gradient(circle 600px at 20% 30%, hsl(var(--primary) / 0.12) 0%, transparent 60%),
-      radial-gradient(circle 500px at 80% 70%, hsl(var(--accent) / 0.1) 0%, transparent 60%),
-      radial-gradient(circle 400px at 50% 90%, hsl(var(--secondary) / 0.08) 0%, transparent 60%),
-      radial-gradient(circle 550px at 90% 20%, hsl(var(--primary) / 0.08) 0%, transparent 60%);
-  }
-  
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: 
-      radial-gradient(circle 400px at 60% 40%, hsl(var(--accent) / 0.06) 0%, transparent 50%),
-      radial-gradient(circle 350px at 30% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%);
-  }
-  
   html {
     scroll-behavior: smooth;
   }
-  
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 96px 96px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .font-mono-ui {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* Small uppercase mono eyebrow */
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    @apply text-[11px] uppercase tracking-[0.22em] text-primary;
+  }
+
+  .eyebrow-muted {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    @apply text-[11px] uppercase tracking-[0.22em] text-muted-foreground;
+  }
+
+  /* Section shell with hairline top rule */
+  .section-shell {
+    @apply border-t border-border py-16 md:py-24 px-5 md:px-10 lg:px-16;
+  }
+
+  .panel {
+    @apply border border-border bg-card/70 backdrop-blur-sm transition-colors duration-200;
+  }
+
+  .panel:hover {
+    @apply border-primary/40;
+  }
+
+  .accent-bar {
+    @apply absolute left-0 top-0 h-full w-px bg-primary;
+  }
+
   .gradient-text {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 150% auto;
-    animation: gradient-shift 5s ease-in-out infinite;
+    color: hsl(var(--foreground));
   }
-  
-  @keyframes gradient-shift {
-    0%, 100% {
-      background-position: 0% center;
-    }
-    50% {
-      background-position: 100% center;
-    }
+
+  .marker::before {
+    content: '';
+    @apply mt-[0.55rem] mr-3 h-px w-4 flex-shrink-0 bg-primary/70;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+}
+
+@layer base {
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-  
-  .typing-animation {
-    overflow: hidden;
-    border-right: 3px solid;
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-  }
-  
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-in {
-    animation: fade-in 0.6s ease-out forwards;
-  }
-  
-  .slide-in-from-left {
-    animation: slide-in-left 0.7s ease-out forwards;
-  }
-  
-  .slide-in-from-right {
-    animation: slide-in-right 0.7s ease-out forwards;
-  }
-  
-  .delay-200 {
-    animation-delay: 0.2s;
-  }
-  
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slide-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
+
   @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-  }
-  
-  /* Cursor glow effect - ultra minimal */
-  .cursor-glow-section {
-    position: relative;
-  }
-  
-  .cursor-glow-section::before {
-    content: '';
-    position: fixed;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.002) 0%, transparent 70%);
-    transition: opacity 0.6s ease;
-  }
-  
-  .cursor-glow-section:hover::before {
-    opacity: 1;
-  }
-  
-  /* Card glow on hover */
-  .hover-glow-card {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  
-  .hover-glow-card::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--secondary) / 0.3));
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    filter: blur(10px);
-  }
-  
-  .hover-glow-card:hover::after {
-    opacity: 1;
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
-  /* Sparkle/Twinkle animation */
-  @keyframes sparkle {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.8);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
+  .animate-fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  @keyframes twinkle {
-    0%, 100% {
-      opacity: 0.1;
-      filter: blur(0px);
-    }
-    25% {
-      opacity: 0.8;
-      filter: blur(1px);
-    }
-    50% {
-      opacity: 0.3;
-      filter: blur(0px);
-    }
-    75% {
-      opacity: 1;
-      filter: blur(0.5px);
-    }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
   }
 
-  .animate-sparkle {
-    animation: sparkle var(--sparkle-duration, 2s) ease-in-out infinite;
-  }
-
-  .animate-twinkle {
-    animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
-  }
-
-  /* Shooting star effect */
-  @keyframes shooting {
-    0% {
-      transform: translateX(0) translateY(0) rotate(var(--angle, 45deg));
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(300px) translateY(300px) rotate(var(--angle, 45deg));
-      opacity: 0;
-    }
-  }
-
-  .shooting-star {
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, hsl(var(--primary)), transparent);
-    border-radius: 50%;
-    animation: shooting var(--duration, 1s) ease-in-out infinite;
-    animation-delay: var(--delay, 0s);
-    opacity: 0;
-    box-shadow: 
-      0 0 6px 2px hsl(var(--primary) / 0.3),
-      0 0 12px 4px hsl(var(--primary) / 0.2);
-  }
-
-  .shooting-star::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: hsl(var(--primary));
-    box-shadow: 0 0 10px 2px hsl(var(--primary) / 0.8);
-  }
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
 }
