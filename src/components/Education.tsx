@@ -1,91 +1,43 @@
-import { GraduationCap, Award } from "lucide-react";
-import { Card } from "@/components/ui/card";
-
 const Education = () => {
   const education = [
     {
       degree: "Bachelor of Business Administration",
-      field: "",
-      institution: "ICFAI Business School (IBS), India",
-      period: "2025 - Present",
-      description: "Building a formal business foundation in sales, marketing, and management alongside a full-time business development career.",
-      achievements: [
-        "Applying management coursework directly to GTM strategy and revenue execution",
-        "Strengthening financial, marketing, and operations fundamentals",
-        "Balancing academic study with leading a business development team",
-      ],
+      institution: "ICFAI Business School (IBS)",
+      location: "India",
+      period: "2025 — Present",
     },
     {
-      degree: "Bachelor of Technology",
-      field: "Electronics and Communication Engineering",
-      institution: "Jawaharlal Nehru Technological University, Hyderabad",
-      period: "2020 - 2024",
-      description: "Strong foundation in engineering principles with focus on communication systems and electronics.",
-      achievements: [
-        "Developed expertise in technical problem-solving and analytical thinking",
-        "Applied engineering concepts to business development strategies",
-        "Balanced academic excellence with practical business skills development",
-      ],
+      degree: "Bachelor of Technology in Electronics and Communication Engineering",
+      institution: "Jawaharlal Nehru Technological University",
+      location: "Hyderabad, India",
+      period: "2020 — 2024",
     },
   ];
 
   return (
-    <section id="education" className="py-20 px-4 md:px-0 cursor-glow-section">
-      <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-            Education
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Academic foundation and continuous pursuit of knowledge
-          </p>
-        </div>
+    <section id="education" className="section-shell">
+      <div className="mb-12 flex items-baseline gap-4">
+        <span className="eyebrow-muted">06</span>
+        <h2 className="text-3xl font-bold uppercase md:text-5xl">Education</h2>
+      </div>
 
-        <div className="space-y-8">
-          {education.map((edu, index) => (
-            <Card 
-              key={index} 
-              className="p-8 hover:shadow-glow transition-all bg-gradient-card relative overflow-hidden hover-glow-card"
-            >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-hero"></div>
-              <div className="ml-4">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-1">
-                      {edu.field ? `${edu.degree} - ${edu.field}` : edu.degree}
-                    </h3>
-                    <div className="flex items-center text-primary gap-2">
-                      <GraduationCap className="h-5 w-5" />
-                      <span className="font-semibold">{edu.institution}</span>
-                    </div>
-                  </div>
-                  <div className="text-muted-foreground mt-2 md:mt-0 font-medium">
-                    {edu.period}
-                  </div>
-                </div>
-                
-                <p className="text-foreground/80 mb-4 leading-relaxed">
-                  {edu.description}
-                </p>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Award className="h-4 w-4" />
-                    <h4>Key Highlights:</h4>
-                  </div>
-                  <ul className="space-y-1">
-                    {edu.achievements.map((achievement, i) => (
-                      <li key={i} className="text-sm text-muted-foreground flex items-start">
-                        <span className="text-secondary mr-2">▸</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+      <div className="border-t border-border">
+        {education.map((edu) => (
+          <div
+            key={edu.degree}
+            className="grid gap-3 border-b border-border py-8 md:grid-cols-[220px_1fr] md:gap-12"
+          >
+            <div className="font-mono-ui text-xs uppercase tracking-[0.16em] text-primary">
+              {edu.period}
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold md:text-xl">{edu.degree}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {edu.institution} · {edu.location}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
