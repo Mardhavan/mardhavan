@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const LoadingScreen = ({ onLoadComplete }: { onLoadComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
@@ -10,46 +10,35 @@ const LoadingScreen = ({ onLoadComplete }: { onLoadComplete: () => void }) => {
         if (prev >= 100) {
           clearInterval(timer);
           setIsExiting(true);
-          setTimeout(onLoadComplete, 500);
+          setTimeout(onLoadComplete, 400);
           return 100;
         }
-        return prev + Math.random() * 15 + 5;
+        return prev + Math.random() * 15 + 6;
       });
-    }, 100);
-
+    }, 90);
     return () => clearInterval(timer);
   }, [onLoadComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-all duration-500 ${
-        isExiting ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-400 ${
+        isExiting ? "opacity-0" : "opacity-100"
       }`}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
-      </div>
-
-      {/* Logo/Name */}
-      <div className="relative z-10 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-8 animate-pulse">
-          MA
-        </h1>
-        
-        {/* Loading bar */}
-        <div className="w-48 md:w-64 h-1 bg-muted rounded-full overflow-hidden">
+      <div className="w-64">
+        <div className="font-mono-ui text-sm uppercase tracking-[0.3em]">
+          M<span className="text-primary">A</span>
+        </div>
+        <div className="mt-4 h-px w-full bg-border">
           <div
-            className="h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full transition-all duration-300 ease-out"
+            className="h-px bg-primary transition-all duration-200 ease-out"
             style={{ width: `${Math.min(progress, 100)}%` }}
           />
         </div>
-        
-        {/* Loading text */}
-        <p className="mt-4 text-muted-foreground text-sm tracking-widest uppercase">
-          Loading...
-        </p>
+        <div className="mt-3 flex justify-between font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          <span>Loading</span>
+          <span>{Math.min(Math.round(progress), 100)}%</span>
+        </div>
       </div>
     </div>
   );
