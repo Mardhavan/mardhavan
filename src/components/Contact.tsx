@@ -1,6 +1,4 @@
-import { Mail, Linkedin, Github, MapPin } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, MapPin, Phone } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
@@ -14,7 +12,8 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
@@ -22,12 +21,10 @@ const Contact = () => {
       message: formData.get("message") as string,
     };
 
-    await supabase.functions.invoke("send-contact-email", {
-      body: data,
-    });
+    await supabase.functions.invoke("send-contact-email", { body: data });
 
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    e.currentTarget.reset();
+    toast.success("Message sent. I'll get back to you shortly.");
+    form.reset();
     setIsSubmitting(false);
   };
 
@@ -37,6 +34,12 @@ const Contact = () => {
       label: "Email",
       value: "mardhavan5320@gmail.com",
       link: "mailto:mardhavan5320@gmail.com",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+91 95505 35320",
+      link: "tel:+919550535320",
     },
     {
       icon: Linkedin,
@@ -53,106 +56,68 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-0 bg-muted/30 cursor-glow-section">
-      <div className="w-full max-w-full md:px-8 lg:px-12">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-            Get In Touch
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Let's connect and create something amazing together.
-          </p>
-        </div>
+    <section id="contact" className="section-shell">
+      <div className="mb-12 flex items-baseline gap-4">
+        <span className="eyebrow-muted">07</span>
+        <h2 className="text-3xl font-bold uppercase md:text-5xl">Contact</h2>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-gradient-card hover-glow-card hover:shadow-glow transition-all">
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start gap-4">
+      <div className="grid gap-px border border-border bg-border lg:grid-cols-2">
+        <div className="bg-card p-6 md:p-10">
+          <p className="max-w-md text-base leading-relaxed text-muted-foreground">
+            Open to conversations around business development, partnerships and GTM roles across AI,
+            SaaS and EdTech.
+          </p>
+
+          <dl className="mt-8 divide-y divide-border border-y border-border">
+            {contactInfo.map((info) => (
+              <div key={info.label} className="flex items-center gap-4 py-4">
+                <info.icon className="h-4 w-4 flex-shrink-0 text-primary" />
+                <dt className="w-24 flex-shrink-0 font-mono-ui text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                  {info.label}
+                </dt>
+                <dd className="min-w-0 truncate text-sm">
                   {info.link ? (
                     <a
                       href={info.link}
-                      target={info.icon === Mail ? "_self" : "_blank"}
+                      target={info.link.startsWith("http") ? "_blank" : "_self"}
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform cursor-pointer"
+                      className="transition-colors hover:text-primary"
                     >
-                      <info.icon className="h-5 w-5 text-white" />
+                      {info.value}
                     </a>
                   ) : (
-                    <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0">
-                      <info.icon className="h-5 w-5 text-white" />
-                    </div>
+                    info.value
                   )}
-                  <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    {info.link ? (
-                      <a
-                        href={info.link}
-                        target={info.icon === Mail ? "_self" : "_blank"}
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-foreground">{info.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
-          <Card className="p-8 bg-gradient-card hover-glow-card hover:shadow-glow transition-all">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="bg-background/50"
-                />
-              </div>
-              <div>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  className="bg-background/50"
-                />
-              </div>
-              <div>
-                <Input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                  className="bg-background/50"
-                />
-              </div>
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  required
-                  rows={5}
-                  className="bg-background/50 resize-none"
-                />
-              </div>
-              <Button
-                type="submit"
-                size="lg"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-hero hover:opacity-90 transition-all shadow-medium disabled:opacity-50"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </Card>
+        <div className="bg-card p-6 md:p-10">
+          <h3 className="font-mono-ui text-[11px] uppercase tracking-[0.18em] text-primary">
+            Send a message
+          </h3>
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <Input type="text" name="name" placeholder="Name" required className="h-12 rounded-none bg-background" />
+            <Input type="email" name="email" placeholder="Email" required className="h-12 rounded-none bg-background" />
+            <Input type="text" name="subject" placeholder="Subject" required className="h-12 rounded-none bg-background" />
+            <Textarea
+              name="message"
+              placeholder="Message"
+              required
+              rows={5}
+              className="resize-none rounded-none bg-background"
+            />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="inline-flex h-12 w-full items-center justify-center bg-primary font-mono-ui text-xs uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary-light disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending…" : "Send message"}
+            </button>
+          </form>
         </div>
       </div>
     </section>
