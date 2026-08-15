@@ -1,89 +1,71 @@
-import { Target, Users, LineChart, Handshake } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
-const About = () => {
-  const capabilities = [
-    {
-      icon: Target,
-      title: "Pipeline & Acquisition",
-      description:
-        "Lead generation, prospecting, qualification and full sales-funnel management across inbound and outbound motion.",
-    },
-    {
-      icon: Users,
-      title: "Team Leadership",
-      description:
-        "Leading an 8-member business development team with structured follow-ups, performance reviews and quota ownership.",
-    },
-    {
-      icon: LineChart,
-      title: "Revenue & Forecasting",
-      description:
-        "CRM reporting, KPI tracking, pipeline analysis and revenue forecasting that drive data-backed sales decisions.",
-    },
-    {
-      icon: Handshake,
-      title: "Partnerships & Retention",
-      description:
-        "Negotiating with consultancies and institutional stakeholders while growing accounts through consultative selling.",
-    },
-  ];
+const facts: [string, string][] = [
+  ["Role", "Business Development Manager"],
+  ["Company", "Apply Wizz"],
+  ["Focus", "AI Career Solutions · SaaS · EdTech"],
+  ["Motion", "Inbound + outbound, consultative"],
+  ["Based in", "Hyderabad, India"],
+];
 
-  return (
-    <section id="about" className="section-shell">
-      <div className="mb-12 flex items-baseline gap-4">
-        <span className="eyebrow-muted">01</span>
-        <h2 className="text-3xl font-bold uppercase md:text-5xl">Profile</h2>
-      </div>
+const About = () => (
+  <section id="about" className="section-shell">
+    <div className="shell">
+      <SectionHeading index="01" title="Positioning" />
 
-      <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-          <p>
-            Business Development professional with hands-on experience in{" "}
-            <span className="text-foreground">AI-powered career solutions, SaaS and EdTech sales</span>,
-            specialising in lead generation, client acquisition, account management and revenue growth.
-          </p>
-          <p>
-            Proven track record of leading an 8-member business development team generating approximately{" "}
-            <span className="text-foreground">$80,000 in monthly team revenue</span> through consultative
-            selling, pipeline management and GTM execution.
-          </p>
-          <p>
-            Skilled in CRM platforms, market research, customer segmentation, sales forecasting and business
-            performance reporting — and experienced in collaborating with product, operations, marketing and
-            customer success teams to optimise sales processes and deliver measurable outcomes across
-            competitive markets.
-          </p>
+      <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-20">
+        <div className="space-y-6">
+          <Reveal>
+            <p className="prose-lede text-foreground/90">
+              I build commercial momentum for products that are genuinely useful — AI-powered career
+              solutions, SaaS platforms and EdTech offerings — by pairing disciplined pipeline work
+              with a consultative sales process.
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="prose-body">
+              My approach starts with the market, not the pitch. I research segments, map buying
+              intent, and qualify hard so that conversations happen with people who have a real
+              problem to solve. From there it's structured discovery, a clear commercial narrative,
+              and follow-through that keeps deals moving without pressure tactics.
+            </p>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="prose-body">
+              I've owned the full cycle — prospecting, qualification, demos and consultative
+              counseling, negotiation, onboarding and account growth — and partnered with education
+              consultancies and institutional stakeholders to open new routes to market. Alongside
+              that, I work closely with product, marketing, operations and customer success so that
+              what we learn in the field improves the GTM motion rather than staying in a CRM note.
+            </p>
+          </Reveal>
+          <Reveal delay={240}>
+            <p className="prose-body">
+              Decisions are data-led: CRM hygiene, pipeline analysis, conversion diagnostics and
+              competitive research inform where effort goes next.
+            </p>
+          </Reveal>
         </div>
 
-        <dl className="divide-y divide-border border-y border-border">
-          {[
-            ["Current role", "Business Development Manager — AI Solutions"],
-            ["Company", "Apply Wizz"],
-            ["Focus", "AI Career Solutions · SaaS · EdTech"],
-            ["Location", "Hyderabad, India"],
-            ["Experience", "Aug 2025 — Present"],
-          ].map(([k, v]) => (
-            <div key={k} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-              <dt className="font-mono-ui text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                {k}
-              </dt>
-              <dd className="text-sm text-foreground sm:text-right">{v}</dd>
-            </div>
-          ))}
-        </dl>
+        <Reveal delay={120}>
+          <dl className="surface divide-y divide-border/70 px-5 md:px-6">
+            {facts.map(([k, v]) => (
+              <div
+                key={k}
+                className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+              >
+                <dt className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  {k}
+                </dt>
+                <dd className="text-sm text-foreground sm:text-right">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </div>
-
-      <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-        {capabilities.map((c) => (
-          <div key={c.title} className="group bg-card p-6 transition-colors hover:bg-secondary">
-            <c.icon className="h-5 w-5 text-primary" />
-            <h3 className="mt-4 text-base font-semibold">{c.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;
