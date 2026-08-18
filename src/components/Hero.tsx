@@ -59,7 +59,7 @@ const Hero = () => {
             <h1 className="animate-fade-up delay-100 display-xl mt-5">
               Mardhavan
               <br />
-              <span className="text-shine">Abbathini</span>
+              <span className="text-shine inline-block">Abbathini</span>
             </h1>
 
             <p className="animate-fade-up delay-200 prose-lede mt-7 max-w-2xl">
