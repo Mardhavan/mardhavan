@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 const areas = [
   {
     title: "Business Development",
-    note: "Opening new markets, segments and revenue routes end to end.",
+    note: "Opening new markets, segments and commercial routes end to end.",
   },
   { title: "SaaS Sales", note: "Value-led selling for subscription and platform products." },
   {
