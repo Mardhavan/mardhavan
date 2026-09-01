@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "About", id: "about" },
@@ -96,8 +97,11 @@ const Navigation = () => {
           >
             Resume
           </a>
+          <ThemeToggle />
         </div>
 
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
         <button
           onClick={() => setIsOpen((v) => !v)}
           className="text-foreground md:hidden"
@@ -106,6 +110,7 @@ const Navigation = () => {
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+        </div>
       </div>
 
       {/* Mobile sheet */}
