@@ -120,7 +120,7 @@ const Hero = () => {
               </a>
               <span className="h-4 w-px bg-border" />
               <span className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Apply Wizz · Open to BD &amp; GTM roles
+                Apply Wizz
               </span>
             </div>
           </div>
