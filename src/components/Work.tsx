@@ -38,7 +38,6 @@ const Work = () => (
   <section id="work" className="section-shell">
     <div className="shell">
       <SectionHeading
-        index="04"
         title="Selected work"
         intro="A few representative initiatives, described the way I'd walk a stakeholder through them."
       />

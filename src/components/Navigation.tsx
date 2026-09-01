@@ -66,8 +66,9 @@ const Navigation = () => {
     >
       <div className="shell flex h-16 items-center justify-between md:h-[72px]">
         <button
+          type="button"
           onClick={() => scrollToSection("home")}
-          className="font-mono-ui text-sm uppercase tracking-[0.28em] transition-colors hover:text-primary"
+          className="rounded-sm font-mono-ui text-sm uppercase tracking-[0.28em] transition-colors hover:text-primary"
           aria-label="Back to top"
         >
           M<span className="text-primary">A</span>
@@ -76,6 +77,7 @@ const Navigation = () => {
         <div className="hidden items-center gap-9 md:flex">
           {navItems.map((item) => (
             <button
+              type="button"
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`relative font-mono-ui text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 hover:text-foreground ${
@@ -102,19 +104,22 @@ const Navigation = () => {
 
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
-        <button
-          onClick={() => setIsOpen((v) => !v)}
-          className="text-foreground md:hidden"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            onClick={() => setIsOpen((v) => !v)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground transition-colors hover:border-primary/60 hover:text-primary md:hidden"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
       {/* Mobile sheet */}
       <div
+        id="mobile-navigation"
         className={`overflow-hidden border-t border-border/70 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-500 md:hidden ${
           isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         }`}
@@ -122,6 +127,7 @@ const Navigation = () => {
         <div className="shell flex flex-col py-4">
           {navItems.map((item) => (
             <button
+              type="button"
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`border-b border-border/50 py-4 text-left font-mono-ui text-xs uppercase tracking-[0.2em] ${

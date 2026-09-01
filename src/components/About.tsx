@@ -12,7 +12,7 @@ const facts: [string, string][] = [
 const About = () => (
   <section id="about" className="section-shell">
     <div className="shell">
-      <SectionHeading index="01" title="Positioning" />
+      <SectionHeading title="Positioning" />
 
       <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-20">
         <div className="space-y-6">
