@@ -51,7 +51,6 @@ const Contact = () => {
     <section id="contact" className="section-shell">
       <div className="shell">
         <SectionHeading
-          index="09"
           title="Let's talk"
           intro="Open to business development and GTM roles, partnership conversations, and thoughtful professional networking across AI, SaaS and EdTech."
         />
@@ -102,7 +101,7 @@ const Contact = () => {
                 rows={5}
                 className="resize-none bg-background/60"
               />
-              <button type="submit" disabled={isSubmitting} className="btn-primary w-full disabled:opacity-50">
+              <button type="submit" disabled={isSubmitting} className="btn-primary w-full">
                 {isSubmitting ? "Sending…" : "Send message"}
               </button>
             </form>

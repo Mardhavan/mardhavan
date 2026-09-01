@@ -50,7 +50,6 @@ const Experience = () => (
   <section id="experience" className="section-shell">
     <div className="shell">
       <SectionHeading
-        index="03"
         title="Experience"
         intro="What I owned, the problems I worked on, and how the sales process was built."
       />

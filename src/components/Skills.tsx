@@ -67,7 +67,7 @@ const certifications = [
 const Skills = () => (
   <section id="skills" className="section-shell">
     <div className="shell">
-      <SectionHeading index="06" title="Toolkit" intro="The skills and platforms behind the process." />
+      <SectionHeading title="Toolkit" intro="The skills and platforms behind the process." />
 
       <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, i) => (

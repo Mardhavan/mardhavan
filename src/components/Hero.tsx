@@ -87,7 +87,7 @@ const Hero = () => {
             </div>
 
             <div className="animate-fade-up delay-500 mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button onClick={() => scrollTo("contact")} className="btn-primary group w-full sm:w-auto">
+              <button type="button" onClick={() => scrollTo("contact")} className="btn-primary group w-full sm:w-auto">
                 Start a conversation
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>

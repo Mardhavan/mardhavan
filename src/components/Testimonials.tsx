@@ -16,7 +16,6 @@ const Testimonials = () => (
   <section id="testimonials" className="section-shell">
     <div className="shell">
       <SectionHeading
-        index="08"
         title="Social proof"
         intro="Recommendations from managers, partners and clients — being collected and added here."
       />
