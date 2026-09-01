@@ -15,6 +15,7 @@ const ParticleField = () => {
     if (!ctx) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isLight = () => !document.documentElement.classList.contains("dark");
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     let width = 0;
@@ -60,7 +61,10 @@ const ParticleField = () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.hypot(dx, dy);
           if (dist < 120) {
-            ctx.strokeStyle = `hsla(38, 90%, 62%, ${(1 - dist / 120) * 0.05})`;
+            const light = isLight();
+            ctx.strokeStyle = light
+              ? `hsla(30, 70%, 38%, ${(1 - dist / 120) * 0.09})`
+              : `hsla(38, 90%, 62%, ${(1 - dist / 120) * 0.05})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -78,7 +82,9 @@ const ParticleField = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r + near * 0.9, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${40 - near * 6}, ${60 + near * 30}%, ${72 + near * 10}%, ${p.a + near * 0.35})`;
+        ctx.fillStyle = isLight()
+          ? `hsla(${32 - near * 4}, ${55 + near * 30}%, ${42 - near * 8}%, ${p.a * 0.85 + near * 0.35})`
+          : `hsla(${40 - near * 6}, ${60 + near * 30}%, ${72 + near * 10}%, ${p.a + near * 0.35})`;
         ctx.fill();
 
         if (!staticFrame) {
@@ -111,8 +117,11 @@ const ParticleField = () => {
       pointer.ty = -9999;
     };
 
+    const onThemeChange = () => draw(reduceMotion);
+
     resize();
     window.addEventListener("resize", resize);
+    window.addEventListener("themechange", onThemeChange);
 
     if (!reduceMotion) {
       window.addEventListener("pointermove", onPointerMove, { passive: true });
@@ -123,6 +132,7 @@ const ParticleField = () => {
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("themechange", onThemeChange);
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);
     };
