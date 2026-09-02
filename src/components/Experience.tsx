@@ -61,7 +61,7 @@ const Experience = () => (
         />
         <div className="space-y-12 md:space-y-16">
           {experiences.map((exp, i) => (
-            <Reveal key={exp.period} delay={i * 80}>
+            <Reveal key={exp.title} delay={i * 80}>
               <article className="group relative grid gap-5 md:grid-cols-[230px_1fr] md:gap-12 md:pl-8">
                 <span
                   aria-hidden

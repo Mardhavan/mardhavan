@@ -91,12 +91,13 @@ const Contact = () => {
           <Reveal delay={120}>
             <form onSubmit={handleSubmit} className="surface space-y-4 p-6 md:p-8">
               <h3 className="eyebrow">Send a message</h3>
-              <Input type="text" name="name" placeholder="Name" required className="h-12 bg-background/60" />
-              <Input type="email" name="email" placeholder="Email" required className="h-12 bg-background/60" />
-              <Input type="text" name="subject" placeholder="Subject" required className="h-12 bg-background/60" />
+              <Input type="text" name="name" placeholder="Name" aria-label="Name" required className="h-12 bg-background/60" />
+              <Input type="email" name="email" placeholder="Email" aria-label="Email" required className="h-12 bg-background/60" />
+              <Input type="text" name="subject" placeholder="Subject" aria-label="Subject" required className="h-12 bg-background/60" />
               <Textarea
                 name="message"
                 placeholder="What would you like to discuss?"
+                aria-label="Message"
                 required
                 rows={5}
                 className="resize-none bg-background/60"
