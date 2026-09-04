@@ -27,18 +27,31 @@ const steps = [
 const Approach = () => (
   <section id="approach" className="section-shell">
     <div className="shell">
-      <SectionHeading title="How I work" />
+      <SectionHeading kicker="How I work" title="Five principles, one process." />
 
-      <div className="grid gap-px overflow-hidden rounded-lg border border-border/80 bg-border/70 md:grid-cols-5">
-        {steps.map((step, i) => (
-          <Reveal key={step.label} delay={i * 70} className="h-full">
-            <div className="group relative h-full bg-card/70 p-6 transition-colors duration-300 hover:bg-card">
-              <span aria-hidden className="mb-4 block h-px w-8 bg-primary/60 transition-all duration-500 group-hover:w-12" />
-              <h3 className="text-base font-semibold tracking-tight">{step.label}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-            </div>
-          </Reveal>
-        ))}
+      <div className="relative">
+        <span
+          aria-hidden
+          className="absolute left-0 right-0 top-[7px] hidden h-px bg-gradient-to-r from-primary/60 via-border to-transparent lg:block"
+        />
+        <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+          {steps.map((step, i) => (
+            <Reveal key={step.label} delay={i * 70} as="li" className="relative">
+              <span
+                aria-hidden
+                className="absolute -top-[3px] left-0 hidden h-[9px] w-[9px] rounded-full border border-primary/70 bg-background lg:block"
+              />
+              <div className="lg:pt-10">
+                <span
+                  aria-hidden
+                  className="mb-4 block h-px w-8 bg-primary/60 lg:hidden"
+                />
+                <h3 className="text-base font-semibold tracking-tight md:text-lg">{step.label}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
       </div>
     </div>
   </section>
