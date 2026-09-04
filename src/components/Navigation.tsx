@@ -35,7 +35,7 @@ const Navigation = () => {
         const el = document.getElementById(id);
         if (!el) return false;
         const rect = el.getBoundingClientRect();
-        return rect.top <= 140 && rect.bottom >= 140;
+        return rect.top <= 160 && rect.bottom >= 160;
       });
       if (current) setActiveSection(current);
     };
@@ -57,57 +57,58 @@ const Navigation = () => {
   };
 
   return (
-    <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "border-b border-border/70 bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <div className="shell flex h-16 items-center justify-between md:h-[72px]">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 md:pt-5">
+      <nav
+        aria-label="Primary"
+        className={`mx-auto flex w-full max-w-[1180px] items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 md:px-5 ${
+          isScrolled
+            ? "glass shadow-[var(--shadow-medium)]"
+            : "border border-transparent bg-transparent"
+        }`}
+      >
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="rounded-sm font-mono-ui text-sm uppercase tracking-[0.28em] transition-colors hover:text-primary"
+          className="rounded-full px-1 font-mono-ui text-sm uppercase tracking-[0.3em] transition-colors hover:text-primary"
           aria-label="Back to top"
         >
           M<span className="text-primary">A</span>
         </button>
 
-        <div className="hidden items-center gap-9 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <button
               type="button"
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative font-mono-ui text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 hover:text-foreground ${
+              className={`relative rounded-full px-3.5 py-2 font-mono-ui text-[10px] uppercase tracking-[0.22em] transition-colors duration-300 hover:text-foreground ${
                 activeSection === item.id ? "text-foreground" : "text-muted-foreground"
               }`}
             >
-              {item.label}
-              <span
-                className={`absolute -bottom-1.5 left-0 h-px bg-primary transition-all duration-300 ${
-                  activeSection === item.id ? "w-full" : "w-0"
-                }`}
-              />
+              {activeSection === item.id && (
+                <span
+                  aria-hidden
+                  className="absolute inset-0 rounded-full border border-primary/40 bg-primary/10"
+                />
+              )}
+              <span className="relative">{item.label}</span>
             </button>
           ))}
+        </div>
+
+        <div className="flex items-center gap-2.5">
           <a
             href="/MARDHAVAN_ABBATHINI_BDM.pdf"
             download="Mardhavan_Abbathini_Resume.pdf"
-            className="rounded-md border border-border px-4 py-2 font-mono-ui text-[10px] uppercase tracking-[0.2em] text-foreground transition-colors hover:border-primary/60 hover:text-primary"
+            className="hidden rounded-full border border-border px-4 py-2 font-mono-ui text-[10px] uppercase tracking-[0.22em] text-foreground transition-colors hover:border-primary/60 hover:text-primary md:inline-flex"
           >
             Resume
           </a>
-          <ThemeToggle />
-        </div>
-
-        <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
+          <ThemeToggle className="rounded-full" />
           <button
             type="button"
             onClick={() => setIsOpen((v) => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground transition-colors hover:border-primary/60 hover:text-primary md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-primary/60 hover:text-primary md:hidden"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
@@ -115,22 +116,22 @@ const Navigation = () => {
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile sheet */}
       <div
         id="mobile-navigation"
-        className={`overflow-hidden border-t border-border/70 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-500 md:hidden ${
-          isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+        className={`mx-auto mt-3 w-full max-w-[1180px] overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 md:hidden ${
+          isOpen ? "glass max-h-[460px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="shell flex flex-col py-4">
+        <div className="flex flex-col px-5 py-3">
           {navItems.map((item) => (
             <button
               type="button"
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`border-b border-border/50 py-4 text-left font-mono-ui text-xs uppercase tracking-[0.2em] ${
+              className={`border-b border-border/40 py-4 text-left font-mono-ui text-xs uppercase tracking-[0.22em] ${
                 activeSection === item.id ? "text-primary" : "text-muted-foreground"
               }`}
             >
@@ -140,13 +141,13 @@ const Navigation = () => {
           <a
             href="/MARDHAVAN_ABBATHINI_BDM.pdf"
             download="Mardhavan_Abbathini_Resume.pdf"
-            className="mt-5 inline-flex h-11 items-center justify-center rounded-md bg-primary font-mono-ui text-[10px] uppercase tracking-[0.2em] text-primary-foreground"
+            className="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-primary font-mono-ui text-[10px] uppercase tracking-[0.22em] text-primary-foreground"
           >
             Download resume
           </a>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
