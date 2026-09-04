@@ -50,38 +50,45 @@ const Experience = () => (
   <section id="experience" className="section-shell">
     <div className="shell">
       <SectionHeading
-        title="Experience"
+        kicker="Experience"
+        title="The trajectory."
         intro="What I owned, the problems I worked on, and how the sales process was built."
       />
 
       <div className="relative">
+        {/* luminous timeline spine */}
         <span
           aria-hidden
-          className="absolute left-0 top-2 hidden h-[calc(100%-1rem)] w-px bg-border md:block"
+          className="absolute left-[5px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-primary/70 via-border to-transparent md:block"
         />
-        <div className="space-y-12 md:space-y-16">
+        <div className="space-y-14 md:space-y-20">
           {experiences.map((exp, i) => (
             <Reveal key={exp.title} delay={i * 80}>
-              <article className="group relative grid gap-5 md:grid-cols-[230px_1fr] md:gap-12 md:pl-8">
+              <article className="group relative grid gap-6 md:grid-cols-[240px_1fr] md:gap-14 md:pl-14">
                 <span
                   aria-hidden
-                  className="absolute -left-[3px] top-2 hidden h-[7px] w-[7px] rounded-full bg-primary transition-transform duration-300 group-hover:scale-150 md:block"
+                  className="absolute left-0 top-[7px] hidden h-[11px] w-[11px] rounded-full border border-primary/70 bg-background transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_18px_hsl(var(--primary)/0.7)] md:block"
                 />
-                <div>
-                  <div className="font-mono-ui text-[11px] uppercase tracking-[0.2em] text-primary">
+                <div className="md:sticky md:top-28 md:self-start">
+                  <div className="font-mono-ui text-[11px] uppercase tracking-[0.22em] text-primary">
                     {exp.period}
                   </div>
-                  <div className="mt-2 font-mono-ui text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                  <div className="mt-2 font-mono-ui text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                     {exp.company}
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold tracking-tight md:text-2xl">{exp.title}</h3>
-                  <p className="mt-2 text-sm text-foreground/80">{exp.summary}</p>
-                  <ul className="mt-6 space-y-3">
+                <div className="relative rounded-xl border border-transparent p-0 transition-colors duration-500 md:-m-6 md:border-border/0 md:p-6 md:group-hover:border-border/60 md:group-hover:bg-card/30 md:group-hover:backdrop-blur-sm">
+                  <h3 className="text-xl font-semibold tracking-tight md:text-[1.75rem]">
+                    {exp.title}
+                  </h3>
+                  <p className="mt-2.5 text-sm text-foreground/80 md:text-base">{exp.summary}</p>
+                  <ul className="mt-7 space-y-3.5">
                     {exp.achievements.map((a) => (
-                      <li key={a} className="marker flex text-sm leading-relaxed text-muted-foreground">
+                      <li
+                        key={a}
+                        className="marker flex text-sm leading-relaxed text-muted-foreground"
+                      >
                         <span>{a}</span>
                       </li>
                     ))}
