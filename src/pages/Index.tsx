@@ -14,6 +14,8 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import LoadingScreen from "@/components/LoadingScreen";
 import ParticleField from "@/components/ParticleField";
+import Atmosphere from "@/components/Atmosphere";
+import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +25,8 @@ const Index = () => {
   return (
     <>
       {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+      <Atmosphere />
+      <CursorGlow />
       <ParticleField />
       <div
         className={`relative z-10 min-h-screen ${
