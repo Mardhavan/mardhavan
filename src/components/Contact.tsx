@@ -67,8 +67,8 @@ const Contact = () => {
             <span className="text-shine">something together.</span>
           </h2>
           <p className="prose-body mx-auto mt-6 max-w-2xl">
-            Open to business development and GTM roles, partnership conversations, and thoughtful
-            professional networking across AI, SaaS and EdTech.
+            Partnership conversations, pipeline and GTM collaboration, and thoughtful professional
+            networking across AI, SaaS and EdTech.
           </p>
           <div className="mt-9 flex justify-center">
             <Magnetic>
