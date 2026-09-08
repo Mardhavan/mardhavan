@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
-import SectionHeading from "@/components/SectionHeading";
+import Magnetic from "@/components/Magnetic";
 
 const contactInfo = [
   {
@@ -48,20 +48,45 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-shell">
-      <div className="shell">
-        <SectionHeading
-          title="Let's talk"
-          intro="Open to business development and GTM roles, partnership conversations, and thoughtful professional networking across AI, SaaS and EdTech."
-        />
+    <section id="contact" className="section-shell relative overflow-hidden">
+      <div
+        aria-hidden
+        className="animate-soft-pulse pointer-events-none absolute left-1/2 top-1/3 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.13),transparent_66%)] blur-3xl"
+      />
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+      <div className="shell relative">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-10 bg-primary/70" />
+            <span className="eyebrow">Contact</span>
+            <span aria-hidden className="h-px w-10 bg-primary/70" />
+          </div>
+          <h2 className="mt-7 text-[2.4rem] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-[4.75rem]">
+            Let's build
+            <br />
+            <span className="text-shine">something together.</span>
+          </h2>
+          <p className="prose-body mx-auto mt-6 max-w-2xl">
+            Partnership conversations, pipeline and GTM collaboration, and thoughtful professional
+            networking across AI, SaaS and EdTech.
+          </p>
+          <div className="mt-9 flex justify-center">
+            <Magnetic>
+              <a href="mailto:mardhavan5320@gmail.com" className="btn-primary group">
+                Email me directly
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </Magnetic>
+          </div>
+        </Reveal>
+
+        <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
-            <dl className="divide-y divide-border/70 border-y border-border/70">
+            <dl className="divide-y divide-border/50 border-y border-border/50">
               {contactInfo.map((info) => (
                 <div key={info.label} className="group flex items-center gap-4 py-5">
                   <info.icon className="h-4 w-4 flex-shrink-0 text-primary" />
-                  <dt className="w-24 flex-shrink-0 font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  <dt className="w-24 flex-shrink-0 font-mono-ui text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                     {info.label}
                   </dt>
                   <dd className="min-w-0 flex-1 truncate text-sm">
@@ -89,18 +114,39 @@ const Contact = () => {
           </Reveal>
 
           <Reveal delay={120}>
-            <form onSubmit={handleSubmit} className="surface space-y-4 p-6 md:p-8">
+            <form onSubmit={handleSubmit} className="group panel ticks space-y-4 p-6 md:p-9">
               <h3 className="eyebrow">Send a message</h3>
-              <Input type="text" name="name" placeholder="Name" aria-label="Name" required className="h-12 bg-background/60" />
-              <Input type="email" name="email" placeholder="Email" aria-label="Email" required className="h-12 bg-background/60" />
-              <Input type="text" name="subject" placeholder="Subject" aria-label="Subject" required className="h-12 bg-background/60" />
+              <Input
+                type="text"
+                name="name"
+                placeholder="Name"
+                aria-label="Name"
+                required
+                className="h-12 bg-background/50"
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email"
+                aria-label="Email"
+                required
+                className="h-12 bg-background/50"
+              />
+              <Input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                aria-label="Subject"
+                required
+                className="h-12 bg-background/50"
+              />
               <Textarea
                 name="message"
                 placeholder="What would you like to discuss?"
                 aria-label="Message"
                 required
                 rows={5}
-                className="resize-none bg-background/60"
+                className="resize-none bg-background/50"
               />
               <button type="submit" disabled={isSubmitting} className="btn-primary w-full">
                 {isSubmitting ? "Sending…" : "Send message"}

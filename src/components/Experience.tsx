@@ -59,17 +59,17 @@ const Experience = () => (
         {/* luminous timeline spine */}
         <span
           aria-hidden
-          className="absolute left-[5px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-primary/70 via-border to-transparent md:block"
+          className="absolute left-[5px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-primary/70 via-border to-transparent lg:block"
         />
         <div className="space-y-14 md:space-y-20">
           {experiences.map((exp, i) => (
             <Reveal key={exp.title} delay={i * 80}>
-              <article className="group relative grid gap-6 md:grid-cols-[240px_1fr] md:gap-14 md:pl-14">
+              <article className="group relative grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-14 lg:pl-14">
                 <span
                   aria-hidden
-                  className="absolute left-0 top-[7px] hidden h-[11px] w-[11px] rounded-full border border-primary/70 bg-background transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_18px_hsl(var(--primary)/0.7)] md:block"
+                  className="absolute left-0 top-[7px] hidden h-[11px] w-[11px] rounded-full border border-primary/70 bg-background transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_18px_hsl(var(--primary)/0.7)] lg:block"
                 />
-                <div className="md:sticky md:top-28 md:self-start">
+                <div className="lg:sticky lg:top-28 lg:self-start">
                   <div className="font-mono-ui text-[11px] uppercase tracking-[0.22em] text-primary">
                     {exp.period}
                   </div>
@@ -78,7 +78,7 @@ const Experience = () => (
                   </div>
                 </div>
 
-                <div className="relative rounded-xl border border-transparent p-0 transition-colors duration-500 md:-m-6 md:border-border/0 md:p-6 md:group-hover:border-border/60 md:group-hover:bg-card/30 md:group-hover:backdrop-blur-sm">
+                <div className="relative rounded-xl border border-transparent p-0 transition-colors duration-500 lg:-m-6 lg:border-border/0 lg:p-6 lg:group-hover:border-border/60 lg:group-hover:bg-card/30 lg:group-hover:backdrop-blur-sm">
                   <h3 className="text-xl font-semibold tracking-tight md:text-[1.75rem]">
                     {exp.title}
                   </h3>

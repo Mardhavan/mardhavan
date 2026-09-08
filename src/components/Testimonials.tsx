@@ -16,19 +16,20 @@ const Testimonials = () => (
   <section id="testimonials" className="section-shell">
     <div className="shell">
       <SectionHeading
-        title="Social proof"
+        kicker="Social proof"
+        title="In other people's words."
         intro="Recommendations from managers, partners and clients — being collected and added here."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-3">
         {slots.map((slot, i) => (
           <Reveal key={slot.context} delay={i * 80} className="h-full">
-            <figure className="surface flex h-full flex-col justify-between border-dashed p-6 md:p-8">
-              <Quote className="h-5 w-5 text-primary/60" />
-              <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            <figure className="group panel flex h-full flex-col justify-between border-dashed p-7 md:p-8">
+              <Quote className="h-5 w-5 text-primary/60 transition-transform duration-500 group-hover:-translate-y-0.5" />
+              <blockquote className="mt-6 text-sm leading-relaxed text-muted-foreground">
                 {slot.hint}
               </blockquote>
-              <figcaption className="mt-8 font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+              <figcaption className="mt-9 font-mono-ui text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">
                 {slot.context} · Coming soon
               </figcaption>
             </figure>
