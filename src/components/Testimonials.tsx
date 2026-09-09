@@ -21,30 +21,33 @@ const Testimonials = () => (
         intro="Recommendations from managers, partners and clients — being collected and added here."
       />
 
-      <div className="grid gap-5 md:grid-cols-3">
-        {slots.map((slot, i) => (
-          <Reveal key={slot.context} delay={i * 80} className="h-full">
-            <figure className="group panel flex h-full flex-col justify-between border-dashed p-7 md:p-8">
-              <Quote className="h-5 w-5 text-primary/60 transition-transform duration-500 group-hover:-translate-y-0.5" />
-              <blockquote className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                {slot.hint}
-              </blockquote>
-              <figcaption className="mt-9 font-mono-ui text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">
-                {slot.context} · Coming soon
-              </figcaption>
-            </figure>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal>
+        <div className="group panel ticks grid gap-10 p-8 md:p-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <div>
+            <Quote className="h-6 w-6 text-primary/70" />
+            <p className="mt-6 text-lg font-medium leading-[1.6] text-foreground md:text-2xl md:leading-[1.45]">
+              I'd rather leave this space honest than fill it with words nobody said.
+            </p>
+            <p className="prose-body mt-5">
+              References from managers, partners and clients are available on request, and
+              recommendations will be published here as they come in.
+            </p>
+            <a href="#contact" className="btn-ghost mt-8">
+              Request references
+            </a>
+          </div>
 
-      <Reveal delay={200} className="mt-8">
-        <p className="text-sm text-muted-foreground">
-          Worked with me?{" "}
-          <a href="#contact" className="link-underline text-primary">
-            Share a recommendation
-          </a>
-          .
-        </p>
+          <ul className="divide-y divide-border/50 border-y border-border/50 lg:my-1">
+            {slots.map((slot) => (
+              <li key={slot.context} className="py-5">
+                <span className="font-mono-ui text-[10px] uppercase tracking-[0.22em] text-primary">
+                  {slot.context}
+                </span>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{slot.hint}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Reveal>
     </div>
   </section>

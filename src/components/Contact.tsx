@@ -111,6 +111,14 @@ const Contact = () => {
             <p className="mt-8 text-sm leading-relaxed text-muted-foreground">
               Prefer the short version? Email works best — I reply to every genuine message.
             </p>
+
+            <a
+              href="/MARDHAVAN_ABBATHINI_BDM.pdf"
+              download="Mardhavan_Abbathini_Resume.pdf"
+              className="btn-ghost mt-7"
+            >
+              Download resume
+            </a>
           </Reveal>
 
           <Reveal delay={120}>
