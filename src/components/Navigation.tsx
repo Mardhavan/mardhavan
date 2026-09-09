@@ -60,7 +60,7 @@ const Navigation = () => {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 md:pt-5">
       <nav
         aria-label="Primary"
-        className={`mx-auto flex w-full max-w-[1180px] items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 md:px-5 ${
+        className={`mx-auto flex w-full  items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 md:px-5 ${
           isScrolled
             ? "glass shadow-[var(--shadow-medium)]"
             : "border border-transparent bg-transparent"
@@ -121,7 +121,7 @@ const Navigation = () => {
       {/* Mobile sheet */}
       <div
         id="mobile-navigation"
-        className={`mx-auto mt-3 w-full max-w-[1180px] overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 md:hidden ${
+        className={`mx-auto mt-3 w-full  overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 md:hidden ${
           isOpen ? "glass max-h-[460px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
