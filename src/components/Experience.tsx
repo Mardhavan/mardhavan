@@ -64,7 +64,7 @@ const Experience = () => (
         <div className="space-y-14 md:space-y-20">
           {experiences.map((exp, i) => (
             <Reveal key={exp.title} delay={i * 80}>
-              <article className="group relative grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-14 lg:pl-14">
+              <article className="group relative grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12 lg:pl-14">
                 <span
                   aria-hidden
                   className="absolute left-0 top-[7px] hidden h-[11px] w-[11px] rounded-full border border-primary/70 bg-background transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_18px_hsl(var(--primary)/0.7)] lg:block"
@@ -83,7 +83,7 @@ const Experience = () => (
                     {exp.title}
                   </h3>
                   <p className="mt-2.5 text-sm text-foreground/80 md:text-base">{exp.summary}</p>
-                  <ul className="mt-7 space-y-3.5">
+                  <ul className="mt-7 max-w-[58rem] space-y-3.5">
                     {exp.achievements.map((a) => (
                       <li
                         key={a}
