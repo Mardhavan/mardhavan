@@ -74,6 +74,13 @@ const Work = () => {
                         <span className="mt-3 block text-xl font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary md:text-[1.9rem]">
                           {item.title}
                         </span>
+                        <span
+                          className={`mt-2.5 block max-w-2xl text-sm leading-relaxed text-muted-foreground transition-opacity duration-500 ${
+                            isOpen ? "hidden" : "block"
+                          }`}
+                        >
+                          {item.challenge}
+                        </span>
                       </span>
                       <span
                         aria-hidden
