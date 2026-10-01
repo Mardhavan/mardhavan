@@ -16,11 +16,11 @@ const Hero = () => {
       {/* atmospheric depth layers */}
       <div
         aria-hidden
-        className="animate-soft-pulse pointer-events-none absolute -right-40 top-[-18%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_65%)] blur-3xl"
+        className="animate-soft-pulse pointer-events-none absolute -right-40 top-[-18%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_65%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-52 bottom-[-24%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.10),transparent_66%)] blur-3xl"
+        className="pointer-events-none absolute -left-52 bottom-[-24%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.10),transparent_66%)]"
       />
 
       <div className="shell relative">
