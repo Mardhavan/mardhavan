@@ -162,10 +162,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent"
-      />
     </section>
   );
 };
