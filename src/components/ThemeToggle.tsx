@@ -3,7 +3,7 @@ import { Moon, Sun } from "lucide-react";
 
 export type Theme = "dark" | "light";
 
-const STORAGE_KEY = "portfolio-theme";
+const STORAGE_KEY = "portfolio-theme-v2";
 
 export const getStoredTheme = (): Theme =>
   (typeof localStorage !== "undefined" && (localStorage.getItem(STORAGE_KEY) as Theme)) || "dark";
