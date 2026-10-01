@@ -11,16 +11,16 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pb-24 pt-28 md:pb-28 md:pt-36"
+      className="relative flex min-h-[100svh] items-center overflow-x-clip pb-24 pt-28 md:pb-28 md:pt-36"
     >
       {/* atmospheric depth layers */}
       <div
         aria-hidden
-        className="animate-soft-pulse pointer-events-none absolute -right-40 top-[-18%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_65%)] blur-3xl"
+        className="animate-soft-pulse pointer-events-none absolute -right-40 top-[-18%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_65%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-52 bottom-[-24%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.10),transparent_66%)] blur-3xl"
+        className="pointer-events-none absolute -left-52 bottom-[-24%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.10),transparent_66%)]"
       />
 
       <div className="shell relative">
@@ -162,10 +162,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent"
-      />
     </section>
   );
 };
