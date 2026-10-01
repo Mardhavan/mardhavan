@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pb-24 pt-28 md:pb-28 md:pt-36"
+      className="relative flex min-h-[100svh] items-center overflow-x-clip pb-24 pt-28 md:pb-28 md:pt-36"
     >
       {/* atmospheric depth layers */}
       <div
