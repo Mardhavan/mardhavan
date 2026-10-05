@@ -14,23 +14,19 @@ const SectionHeading = ({
   kicker,
   align = "left",
   className = "",
-}: SectionHeadingProps) =>
-  align === "center" ? (
-    <Reveal className={`mx-auto mb-14 max-w-3xl text-center md:mb-20 ${className}`}>
-      {kicker && <p className="eyebrow">{kicker}</p>}
-      <h2 className="display-lg mt-5">{title}</h2>
-      {intro && <p className="prose-body mx-auto mt-5 max-w-2xl">{intro}</p>}
-    </Reveal>
-  ) : (
-    <Reveal
-      className={`mb-14 grid gap-6 md:mb-20 lg:grid-cols-12 lg:items-end lg:gap-16 ${className}`}
-    >
-      <div className="lg:col-span-7">
-        {kicker && <p className="eyebrow">{kicker}</p>}
-        <h2 className="display-lg mt-5">{title}</h2>
-      </div>
-      {intro && <p className="prose-body max-w-md lg:col-span-5 lg:pb-3">{intro}</p>}
-    </Reveal>
-  );
+}: SectionHeadingProps) => (
+  <Reveal
+    className={`mb-14 md:mb-20 ${align === "center" ? "mx-auto max-w-3xl text-center" : ""} ${className}`}
+  >
+    <div className={`flex items-center gap-3 ${align === "center" ? "justify-center" : ""}`}>
+      <span aria-hidden className="h-px w-10 bg-primary/70" />
+      {kicker && <span className="eyebrow">{kicker}</span>}
+    </div>
+    <h2 className="display-lg mt-5">{title}</h2>
+    {intro && (
+      <p className={`prose-body mt-5 max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>{intro}</p>
+    )}
+  </Reveal>
+);
 
 export default SectionHeading;

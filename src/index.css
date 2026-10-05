@@ -9,83 +9,105 @@
    ============================================================ */
 
 @layer base {
-  /* Light mode — warm ivory paper, bronze signal */
+  /* Light mode — cool architectural paper, same amber signal */
   :root {
-    --background: 40 33% 96%;
-    --foreground: 30 12% 9%;
-    --card: 40 30% 99%;
-    --card-foreground: 30 12% 9%;
-    --popover: 40 30% 99%;
-    --popover-foreground: 30 12% 9%;
-    --primary: 30 46% 36%;
-    --primary-foreground: 40 33% 97%;
-    --primary-light: 32 50% 44%;
-    --primary-dark: 28 46% 28%;
-    --secondary: 38 22% 91%;
-    --secondary-foreground: 30 12% 12%;
-    --muted: 38 22% 92%;
-    --muted-foreground: 30 6% 38%;
-    --accent: 30 46% 36%;
-    --accent-foreground: 40 33% 97%;
+    --background: 40 24% 96%;
+    --foreground: 222 26% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 26% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 26% 9%;
+
+    --primary: 32 88% 44%;
+    --primary-foreground: 40 40% 98%;
+
+    --primary-light: 34 92% 50%;
+    --primary-dark: 28 86% 36%;
+
+    --secondary: 40 18% 91%;
+    --secondary-foreground: 222 26% 13%;
+
+    --muted: 40 18% 92%;
+    --muted-foreground: 222 10% 38%;
+
+    --accent: 194 64% 34%;
+    --accent-foreground: 40 40% 98%;
+
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
-    --border: 35 16% 84%;
-    --input: 35 16% 84%;
-    --ring: 30 46% 36%;
-    --radius: 0.25rem;
 
-    --glass: 40 33% 97% / 0.78;
-    --grid-line: 30 12% 9% / 0;
-    --grain-opacity: 0;
+    --border: 36 14% 84%;
+    --input: 36 14% 84%;
+    --ring: 32 88% 44%;
 
-    --gradient-hero: linear-gradient(100deg, hsl(30 12% 9%) 0%, hsl(30 46% 36%) 100%);
-    --gradient-line: linear-gradient(90deg, transparent, hsl(var(--border)) 15%, hsl(var(--border)) 85%, transparent);
+    --radius: 0.375rem;
+
+    --glass: 0 0% 100% / 0.62;
+    --grid-line: 222 20% 18% / 0.07;
+    --grain-opacity: 0.028;
+
+    --gradient-hero: linear-gradient(104deg, hsl(222 26% 12%) 0%, hsl(222 14% 30%) 52%, hsl(32 88% 46%) 100%);
+    --gradient-line: linear-gradient(90deg, transparent, hsl(var(--border)) 18%, hsl(var(--border)) 82%, transparent);
+
     --atmosphere:
-      radial-gradient(70rem 40rem at 85% -10%, hsl(36 60% 70% / 0.18), transparent 60%),
-      radial-gradient(60rem 40rem at 0% 110%, hsl(36 40% 70% / 0.12), transparent 60%);
+      radial-gradient(72rem 42rem at 80% -10%, hsl(32 88% 50% / 0.14), transparent 62%),
+      radial-gradient(56rem 36rem at 2% 26%, hsl(194 70% 45% / 0.10), transparent 64%),
+      radial-gradient(64rem 44rem at 50% 112%, hsl(32 88% 50% / 0.10), transparent 62%);
 
-    --shadow-medium: 0 18px 40px -28px hsl(30 20% 20% / 0.3);
-    --shadow-large: 0 40px 90px -50px hsl(30 20% 20% / 0.35);
-    --shadow-glow: 0 10px 30px -12px hsl(30 46% 36% / 0.35);
+    --shadow-medium: 0 18px 40px -26px hsl(222 26% 20% / 0.35);
+    --shadow-large: 0 40px 90px -44px hsl(222 26% 20% / 0.38);
+    --shadow-glow: 0 0 60px -14px hsl(32 88% 46% / 0.34);
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Dark mode — the default: warm ink, ivory type, champagne signal */
+  /* Dark mode — the default experience */
   .dark {
-    --background: 30 8% 5%;
-    --foreground: 40 24% 93%;
-    --card: 30 7% 8%;
-    --card-foreground: 40 24% 93%;
-    --popover: 30 7% 7%;
-    --popover-foreground: 40 24% 93%;
-    --primary: 38 52% 66%;
-    --primary-foreground: 30 10% 6%;
-    --primary-light: 40 60% 74%;
-    --primary-dark: 36 42% 52%;
-    --secondary: 30 6% 11%;
-    --secondary-foreground: 40 24% 92%;
-    --muted: 30 6% 10%;
-    --muted-foreground: 36 8% 62%;
-    --accent: 38 52% 66%;
-    --accent-foreground: 30 10% 6%;
-    --border: 34 8% 16%;
-    --input: 34 8% 16%;
-    --ring: 38 52% 66%;
+    --background: 222 24% 3%;
+    --foreground: 40 12% 96%;
 
-    --glass: 30 8% 6% / 0.72;
-    --grid-line: 0 0% 0% / 0;
-    --grain-opacity: 0.035;
+    --card: 222 20% 6%;
+    --card-foreground: 40 12% 96%;
 
-    --gradient-hero: linear-gradient(100deg, hsl(40 24% 93%) 0%, hsl(38 52% 70%) 100%);
+    --popover: 222 22% 5%;
+    --popover-foreground: 40 12% 96%;
+
+    --primary: 36 94% 54%;
+    --primary-foreground: 24 45% 6%;
+
+    --primary-light: 41 96% 64%;
+    --primary-dark: 30 88% 44%;
+
+    --secondary: 222 14% 10%;
+    --secondary-foreground: 40 12% 93%;
+
+    --muted: 222 14% 9%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 189 62% 62%;
+    --accent-foreground: 222 24% 4%;
+
+    --border: 222 12% 14%;
+    --input: 222 12% 14%;
+    --ring: 36 94% 54%;
+
+    --glass: 222 20% 8% / 0.55;
+    --grid-line: 40 30% 80% / 0.045;
+    --grain-opacity: 0.05;
+
+    --gradient-hero: linear-gradient(104deg, hsl(40 18% 98%) 0%, hsl(40 14% 78%) 55%, hsl(36 94% 62%) 100%);
+
     --atmosphere:
-      radial-gradient(70rem 42rem at 85% -12%, hsl(38 52% 66% / 0.07), transparent 60%),
-      radial-gradient(60rem 40rem at 0% 115%, hsl(38 40% 60% / 0.05), transparent 60%);
+      radial-gradient(72rem 44rem at 78% -12%, hsl(36 94% 54% / 0.09), transparent 62%),
+      radial-gradient(58rem 38rem at 0% 28%, hsl(189 80% 52% / 0.055), transparent 64%),
+      radial-gradient(66rem 46rem at 55% 114%, hsl(36 94% 54% / 0.06), transparent 62%);
 
-    --shadow-medium: 0 20px 44px -28px hsl(0 0% 0% / 0.85);
-    --shadow-large: 0 46px 100px -48px hsl(0 0% 0% / 0.9);
-    --shadow-glow: 0 10px 34px -12px hsl(38 52% 66% / 0.35);
+    --shadow-medium: 0 20px 44px -28px hsl(0 0% 0% / 0.9);
+    --shadow-large: 0 46px 100px -48px hsl(0 0% 0% / 0.95);
+    --shadow-glow: 0 0 70px -16px hsl(36 94% 54% / 0.3);
   }
 }
 
@@ -102,20 +124,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     transition: background-color 0.45s ease, color 0.45s ease;
   }
 
-  h1, h2 {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    text-wrap: balance;
-  }
-  h3, h4 {
-    font-family: 'Manrope', system-ui, sans-serif;
-    letter-spacing: -0.015em;
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
 
@@ -142,33 +158,26 @@
 
 @layer components {
   .font-mono-ui {
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-weight: 600;
-  }
-  .font-serif-display {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
   }
 
   .eyebrow {
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-weight: 700;
-    @apply text-[11px] uppercase tracking-[0.24em] text-primary;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    @apply text-[10px] uppercase tracking-[0.3em] text-primary md:text-[11px];
   }
 
   .eyebrow-muted {
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-weight: 600;
-    @apply text-[11px] uppercase tracking-[0.24em] text-muted-foreground;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    @apply text-[10px] uppercase tracking-[0.3em] text-muted-foreground md:text-[11px];
   }
 
   /* ---- Layout ------------------------------------------------ */
   .shell {
-    @apply mx-auto w-full max-w-[1320px] px-6 sm:px-10 lg:px-16;
+    @apply w-full px-5 sm:px-8 lg:px-14;
   }
 
   .section-shell {
-    @apply relative border-t border-border/60 py-24 md:py-32 lg:py-40;
+    @apply relative py-24 md:py-28 lg:py-36;
   }
 
   .hairline {
@@ -200,12 +209,14 @@
   }
 
   .panel {
-    @apply relative overflow-hidden rounded-sm border border-border/80 bg-card/60;
+    @apply relative overflow-hidden rounded-lg border border-border/70 bg-card/40;
+    backdrop-filter: blur(8px);
     transition: var(--transition-smooth);
   }
 
   .panel:hover {
-    @apply border-primary/40 bg-card;
+    @apply border-primary/35 bg-card/70;
+    transform: translateY(-4px);
     box-shadow: var(--shadow-medium);
   }
 
@@ -213,7 +224,7 @@
   .ticks::before,
   .ticks::after {
     content: '';
-    @apply pointer-events-none absolute hidden h-3 w-3 opacity-0;
+    @apply pointer-events-none absolute h-3 w-3 opacity-60 transition-opacity duration-500;
     border-color: hsl(var(--primary));
   }
   .ticks::before {
@@ -229,19 +240,17 @@
 
   /* ---- Typography -------------------------------------------- */
   .display-hero {
-    font-family: 'Instrument Serif', Georgia, serif;
-    @apply text-[3.6rem] font-normal leading-[0.92] sm:text-[5.25rem] lg:text-[7rem] xl:text-[8.25rem];
-    letter-spacing: -0.025em;
+    @apply text-[3.1rem] font-semibold leading-[0.9] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.25rem];
+    letter-spacing: -0.045em;
   }
 
   .display-lg {
-    font-family: 'Instrument Serif', Georgia, serif;
-    @apply text-[2.6rem] font-normal leading-[1.02] sm:text-[3.4rem] lg:text-[4.5rem];
-    letter-spacing: -0.02em;
+    @apply text-[2rem] font-semibold leading-[1.02] sm:text-[2.6rem] lg:text-[3.4rem];
+    letter-spacing: -0.038em;
   }
 
   .prose-lede {
-    @apply text-lg leading-[1.65] text-muted-foreground md:text-[1.3rem];
+    @apply text-lg leading-[1.7] text-muted-foreground md:text-xl;
   }
 
   .prose-body {
@@ -249,8 +258,10 @@
   }
 
   .text-shine {
-    font-style: italic;
-    color: hsl(var(--primary));
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .text-outline {
@@ -260,7 +271,7 @@
 
   /* ---- Controls ---------------------------------------------- */
   .btn-primary {
-    @apply relative inline-flex h-[3.25rem] items-center justify-center gap-2.5 overflow-hidden rounded-full border border-primary bg-primary px-8 font-mono-ui text-[13px] tracking-[0.01em] text-primary-foreground;
+    @apply relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-md border border-primary bg-primary px-7 font-mono-ui text-[11px] uppercase tracking-[0.22em] text-primary-foreground;
     transition: var(--transition-smooth);
   }
 
@@ -279,12 +290,12 @@
   }
 
   .btn-ghost {
-    @apply inline-flex h-[3.25rem] items-center justify-center gap-2.5 rounded-full border border-foreground/25 bg-transparent px-8 font-mono-ui text-[13px] tracking-[0.01em] text-foreground;
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-md border border-border bg-background/30 px-7 font-mono-ui text-[11px] uppercase tracking-[0.22em] text-foreground backdrop-blur-sm;
     transition: var(--transition-smooth);
   }
 
   .btn-ghost:hover {
-    @apply border-foreground bg-foreground text-background;
+    @apply border-primary/60 text-primary;
   }
 
   .btn-primary:disabled,
