@@ -131,7 +131,7 @@
 
   h1, h2, h3, h4 {
     font-family: 'Space Grotesk', 'Inter', sans-serif;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     text-wrap: balance;
   }
 
@@ -177,7 +177,28 @@
   }
 
   .section-shell {
-    @apply relative py-24 md:py-28 lg:py-36;
+    @apply relative py-20 md:py-24 lg:py-28;
+  }
+
+  .portfolio-opening {
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .opening-portrait::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 38%;
+    height: 28%;
+    border-top: 1px solid hsl(var(--primary) / 0.55);
+    border-right: 1px solid hsl(var(--primary) / 0.55);
+  }
+
+  @media (min-width: 1024px) {
+    .portfolio-opening { padding-top: 8.5rem; padding-bottom: 4.5rem; }
+    .opening-portrait { max-width: 440px; }
   }
 
   .hairline {
@@ -240,13 +261,13 @@
 
   /* ---- Typography -------------------------------------------- */
   .display-hero {
-    @apply text-[3.1rem] font-semibold leading-[0.9] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.25rem];
-    letter-spacing: -0.045em;
+    @apply text-[2.75rem] font-semibold leading-[1.02] sm:text-[4.25rem] lg:text-[4.5rem] xl:text-[5.5rem];
+    letter-spacing: 0;
   }
 
   .display-lg {
     @apply text-[2rem] font-semibold leading-[1.02] sm:text-[2.6rem] lg:text-[3.4rem];
-    letter-spacing: -0.038em;
+    letter-spacing: 0;
   }
 
   .prose-lede {
