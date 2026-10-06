@@ -57,7 +57,7 @@ const About = () => (
         </div>
 
         <Reveal delay={120}>
-          <div className="group panel ticks p-6 md:p-8 lg:sticky lg:top-28">
+          <div className="border-t border-primary/60 pt-6 lg:sticky lg:top-28">
             <span className="eyebrow-muted">Profile</span>
             <dl className="mt-6 divide-y divide-border/50">
               {facts.map(([k, v]) => (

@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Linkedin, Mail, MapPin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 import Magnetic from "@/components/Magnetic";
+import { Button } from "@/components/ui/button";
 
 const focusAreas = ["AI Career Solutions", "SaaS", "EdTech", "GTM"];
 
@@ -11,20 +12,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-x-clip pb-24 pt-28 md:pb-28 md:pt-36"
+      className="portfolio-opening relative overflow-x-clip"
     >
-      {/* atmospheric depth layers */}
-      <div
-        aria-hidden
-        className="animate-soft-pulse pointer-events-none absolute -right-40 top-[-18%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.14),transparent_65%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-52 bottom-[-24%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.10),transparent_66%)]"
-      />
-
       <div className="shell relative">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.85fr)] lg:gap-20">
+        <div className="opening-layout grid items-center gap-9 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.8fr)] lg:gap-14">
           {/* ---- Copy (desktop left) ---- */}
           <div className="order-2 lg:order-1">
             <div className="animate-fade-up flex flex-wrap items-center gap-3">
@@ -37,14 +28,14 @@ const Hero = () => {
               <span className="eyebrow-muted hidden sm:inline">Apply Wizz</span>
             </div>
 
-            <h1 className="display-hero animate-fade-up delay-100 mt-7">
+            <h1 className="display-hero animate-fade-up delay-100 mt-6">
               <span className="block">Mardhavan</span>
-              <span className="text-shine mt-1 block">Abbathini</span>
+              <span className="mt-1 block text-primary">Abbathini</span>
             </h1>
 
-            <div aria-hidden className="animate-fade-up delay-200 mt-8 h-px w-full max-w-xl bg-gradient-to-r from-primary/70 via-border to-transparent" />
+            <div aria-hidden className="animate-fade-up delay-200 mt-6 h-px w-20 bg-primary/70" />
 
-            <p className="animate-fade-up delay-300 prose-lede mt-7 max-w-2xl">
+            <p className="animate-fade-up delay-300 prose-lede mt-6 max-w-2xl">
               Business Development Manager across{" "}
               <span className="text-foreground">AI-powered career solutions, SaaS and EdTech</span> —
               building pipeline, closing partnerships, and running GTM with a consultative, data-led
@@ -57,41 +48,42 @@ const Hero = () => {
               closes.
             </p>
 
-            <div className="animate-fade-up delay-500 mt-8 flex flex-wrap gap-2">
+            <div className="animate-fade-up delay-500 mt-6 flex flex-wrap gap-x-5 gap-y-2">
               {focusAreas.map((area) => (
                 <span
                   key={area}
-                  className="rounded-full border border-border/70 bg-card/40 px-3.5 py-1.5 font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground backdrop-blur-sm transition-colors duration-300 hover:border-primary/50 hover:text-foreground"
+                  className="border-b border-border pb-2 font-mono-ui text-[10px] uppercase text-muted-foreground"
                 >
                   {area}
                 </span>
               ))}
             </div>
 
-            <div className="animate-fade-up delay-600 mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="animate-fade-up delay-600 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Magnetic className="w-full sm:w-auto">
-                <button
+                <Button
                   type="button"
                   onClick={() => scrollTo("contact")}
                   className="btn-primary group w-full sm:w-auto"
                 >
                   Start a conversation
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                </Button>
               </Magnetic>
               <Magnetic className="w-full sm:w-auto">
+                <Button asChild variant="outline" className="btn-ghost w-full sm:w-auto">
                 <a
                   href="/MARDHAVAN_ABBATHINI_BDM.pdf"
                   download="Mardhavan_Abbathini_Resume.pdf"
-                  className="btn-ghost w-full sm:w-auto"
                 >
                   <Download className="h-4 w-4" />
                   Download resume
                 </a>
+                </Button>
               </Magnetic>
             </div>
 
-            <div className="animate-fade-up delay-700 mt-10 flex items-center gap-5">
+            <div className="animate-fade-up delay-700 mt-7 flex items-center gap-5">
               <a
                 href="https://www.linkedin.com/in/mardhavan-abbathini-b34b59259"
                 target="_blank"
@@ -118,23 +110,12 @@ const Hero = () => {
 
           {/* ---- Portrait (first on mobile) ---- */}
           <div className="order-1 lg:order-2">
-            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none">
-              <div
-                aria-hidden
-                className="animate-soft-pulse absolute -inset-8 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_40%,hsl(var(--primary)/0.18),transparent_70%)] blur-2xl"
-              />
-
-              {/* orbiting technical ring */}
-              <div
-                aria-hidden
-                className="animate-orbit absolute -inset-6 rounded-full border border-dashed border-border/60 opacity-50 hidden lg:block"
-              />
-
-              <div className="animate-reveal group relative overflow-hidden rounded-xl border border-border/70 bg-card/60 backdrop-blur-sm">
+            <div className="opening-portrait relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none">
+              <div className="animate-reveal group relative overflow-hidden bg-card">
                 <img
                   src={profilePhoto}
                   alt="Mardhavan Abbathini, Business Development Manager across AI, SaaS and EdTech"
-                  className="aspect-[4/5] w-full object-cover contrast-[1.04] saturate-[0.9] transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                   className="aspect-[4/5] w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.025]"
                   loading="eager"
                   decoding="async"
                 />
@@ -157,6 +138,7 @@ const Hero = () => {
                   <span className="text-primary">BD · GTM</span>
                 </div>
               </div>
+              <div aria-hidden className="mt-4 h-px w-full bg-border" />
             </div>
           </div>
         </div>
