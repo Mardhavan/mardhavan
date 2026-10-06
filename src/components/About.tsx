@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const facts: [string, string][] = [
   ["Role", "Business Development Manager"],
@@ -29,15 +30,16 @@ const About = () => (
                 pipeline work with a consultative sales process.
               </p>
             </Reveal>
-            <Reveal delay={80}>
+            <Accordion type="single" collapsible className="border-t border-border">
+              <AccordionItem value="approach">
+                <AccordionTrigger className="text-left text-primary">Approach & full-cycle experience</AccordionTrigger>
+                <AccordionContent className="space-y-6 pt-3">
               <p className="prose-body">
                 My approach starts with the market, not the pitch. I research segments, map buying
                 intent, and qualify hard so that conversations happen with people who have a real
                 problem to solve. From there it's structured discovery, a clear commercial
                 narrative, and follow-through that keeps deals moving without pressure tactics.
               </p>
-            </Reveal>
-            <Reveal delay={160}>
               <p className="prose-body">
                 I've owned the full cycle — prospecting, qualification, demos and consultative
                 counseling, negotiation, onboarding and account growth — and partnered with
@@ -46,13 +48,13 @@ const About = () => (
                 success so that what we learn in the field improves the GTM motion rather than
                 staying in a CRM note.
               </p>
-            </Reveal>
-            <Reveal delay={240}>
               <p className="prose-body">
                 Decisions are data-led: CRM hygiene, pipeline analysis, conversion diagnostics and
                 competitive research inform where effort goes next.
               </p>
-            </Reveal>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
 
