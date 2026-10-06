@@ -183,6 +183,40 @@
   .portfolio-opening {
     padding-top: 7rem;
     padding-bottom: 4rem;
+    isolation: isolate;
+  }
+
+  .signal-canvas {
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 20%, hsl(0 0% 0%) 75%, transparent);
+  }
+
+  .opening-layout > div:first-child {
+    text-shadow: 0 2px 20px hsl(var(--background) / 0.8);
+  }
+
+  .focus-control::after {
+    content: '↗';
+    color: hsl(var(--primary));
+    transition: transform 0.3s ease;
+  }
+
+  .focus-control:hover::after { transform: translate(2px, -2px); }
+
+  .opening-detail summary::marker { color: hsl(var(--primary)); }
+
+  @media (max-width: 1023px) {
+    .opening-portrait { max-width: 240px; }
+    .opening-portrait img { aspect-ratio: 1 / 1; object-position: center 25%; }
+    .portfolio-opening { padding-top: 6.5rem; }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .opening-layout { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr); gap: 2rem; }
+    .opening-layout > div:first-child { order: 1; }
+    .opening-layout > div:last-child { order: 2; }
+    .opening-portrait img { aspect-ratio: 4 / 5; }
+    .opening-layout .display-hero { font-size: 3rem; }
   }
 
   .opening-portrait::before {

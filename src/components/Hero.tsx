@@ -2,6 +2,7 @@ import { ArrowRight, Download, Linkedin, Mail, MapPin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 import Magnetic from "@/components/Magnetic";
 import { Button } from "@/components/ui/button";
+import SignalCanvas from "@/components/SignalCanvas";
 
 const focusAreas = ["AI Career Solutions", "SaaS", "EdTech", "GTM"];
 
@@ -14,6 +15,7 @@ const Hero = () => {
       id="home"
       className="portfolio-opening relative overflow-x-clip"
     >
+      <SignalCanvas />
       <div className="shell relative">
         <div className="opening-layout grid items-center gap-9 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.8fr)] lg:gap-14">
           {/* ---- Copy (desktop left) ---- */}
@@ -42,20 +44,25 @@ const Hero = () => {
               sales process.
             </p>
 
-            <p className="animate-fade-up delay-400 mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            <details className="opening-detail animate-fade-up delay-400 mt-4 max-w-xl">
+              <summary className="w-fit cursor-pointer text-xs text-muted-foreground transition-colors hover:text-primary">My approach</summary>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               I work close to the customer: understanding the problem before pitching the product,
               qualifying honestly, and building commercial relationships that hold up after the deal
               closes.
             </p>
+            </details>
 
             <div className="animate-fade-up delay-500 mt-6 flex flex-wrap gap-x-5 gap-y-2">
               {focusAreas.map((area) => (
-                <span
+                <Button
                   key={area}
-                  className="border-b border-border pb-2 font-mono-ui text-[10px] uppercase text-muted-foreground"
+                  variant="ghost"
+                  onClick={() => scrollTo(area === "GTM" ? "work" : "expertise")}
+                  className="focus-control h-9 rounded-none border-b border-border px-0 font-mono-ui text-[10px] uppercase text-muted-foreground hover:bg-transparent hover:text-primary"
                 >
                   {area}
-                </span>
+                </Button>
               ))}
             </div>
 

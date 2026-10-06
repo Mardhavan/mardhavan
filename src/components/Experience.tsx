@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const experiences = [
   {
@@ -61,7 +62,7 @@ const Experience = () => (
           aria-hidden
           className="absolute left-[5px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-primary/70 via-border to-transparent lg:block"
         />
-        <div className="space-y-14 md:space-y-20">
+        <div className="space-y-8 md:space-y-10">
           {experiences.map((exp, i) => (
             <Reveal key={exp.title} delay={i * 80}>
               <article className="group relative grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12 lg:pl-14">
@@ -83,7 +84,11 @@ const Experience = () => (
                     {exp.title}
                   </h3>
                   <p className="mt-2.5 text-sm text-foreground/80 md:text-base">{exp.summary}</p>
-                  <ul className="mt-7 max-w-[58rem] space-y-3.5">
+                  <Accordion type="single" collapsible className="mt-4">
+                    <AccordionItem value="responsibilities" className="border-border/60">
+                      <AccordionTrigger className="py-3 text-xs text-primary">Responsibilities & contributions</AccordionTrigger>
+                      <AccordionContent>
+                  <ul className="mt-3 max-w-[58rem] space-y-3.5">
                     {exp.achievements.map((a) => (
                       <li
                         key={a}
@@ -93,6 +98,9 @@ const Experience = () => (
                       </li>
                     ))}
                   </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               </article>
             </Reveal>
