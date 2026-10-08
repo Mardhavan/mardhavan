@@ -188,6 +188,7 @@
 
   .signal-canvas {
     z-index: -1;
+    opacity: 0.65;
     mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 20%, hsl(0 0% 0%) 75%, transparent);
   }
 
