@@ -117,7 +117,7 @@ const Hero = () => {
 
           {/* ---- Portrait (first on mobile) ---- */}
           <div className="order-1 lg:order-2">
-            <div className="opening-portrait relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none">
+            <div className="opening-portrait relative mx-auto w-full">
               <div className="animate-reveal group relative overflow-hidden bg-card">
                 <img
                   src={profilePhoto}
